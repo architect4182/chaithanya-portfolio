@@ -30,6 +30,15 @@ export default function ProjectsPage() {
       techStack: "React • Cloudinary • AI Journal"
     },
     {
+      title: "Aegis Protocol",
+      category: "Interactive Sci-Fi Story Website",
+      filterCategories: ["UI/UX"],
+      image: "/aegis-protocol.jpg",
+      link: "https://aegis-protocol-omega.vercel.app",
+      github: "https://github.com/architect4182/aegis-protocol",
+      techStack: "JavaScript"
+    },
+    {
       title: "AtmosVerse",
       category: "Cinematic Entertainment Platform",
       filterCategories: ["UI/UX", "API Keys"],
