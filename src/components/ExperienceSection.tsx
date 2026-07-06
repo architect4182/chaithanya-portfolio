@@ -105,6 +105,151 @@ export default function ExperienceSection() {
                 </motion.div>
               ))}
             </motion.div>
+
+            {/* Certifications Section */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ marginTop: "4rem" }}
+            >
+              <h3 style={{ fontSize: "1.5rem", color: "var(--text-white)", marginBottom: "1.5rem", fontWeight: 600 }}>{"Certifications & Continuous Learning"}</h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                {[
+                  { 
+                    title: "Introduction to Artificial Intelligence (AI)", 
+                    issuer: "IBM (Coursera)", 
+                    date: "Aug 2020",
+                    link: "https://coursera.org/verify/6KWARKMGZ8BT",
+                    logo: "https://www.google.com/s2/favicons?domain=ibm.com&sz=128"
+                  },
+                  {
+                    title: "Introduction to Python",
+                    issuer: "DataCamp",
+                    date: "Completed",
+                    link: "https://www.datacamp.com/completed/statement-of-accomplishment/course/6004d9aef8eeac2762313d46d643901664b33c06",
+                    logo: "https://www.google.com/s2/favicons?domain=datacamp.com&sz=128"
+                  }
+                ].map((cert, i) => {
+                  const CardContent = (
+                    <>
+                      <div style={{
+                        width: "48px",
+                        height: "48px",
+                        borderRadius: "50%",
+                        backgroundColor: "rgba(255,255,255,0.05)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "var(--accent-orange)",
+                        flexShrink: 0,
+                        overflow: "hidden"
+                      }}>
+                        {cert.logo ? (
+                          <img src={cert.logo} alt={cert.issuer} style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
+                        ) : (
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89L17 22l-5-3l-5 3l1.523-9.11"></path></svg>
+                        )}
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                        <h4 style={{ color: "var(--text-white)", fontSize: "1.1rem", margin: 0, fontWeight: 500 }}>{cert.title}</h4>
+                        <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", margin: 0 }}>{cert.issuer} &bull; {cert.date}</p>
+                      </div>
+                    </>
+                  );
+
+                  const commonStyle = {
+                    backgroundColor: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(255,255,255,0.05)",
+                    borderRadius: "12px",
+                    padding: "1.5rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "1.5rem",
+                    transition: "all 0.2s ease",
+                    cursor: "pointer",
+                    textDecoration: "none"
+                  };
+
+                  return cert.link ? (
+                    <motion.a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      style={commonStyle as any}
+                      whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)", x: 5 }}
+                    >
+                      {CardContent}
+                    </motion.a>
+                  ) : (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      style={commonStyle as any}
+                      whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)", x: 5 }}
+                    >
+                      {CardContent}
+                    </motion.div>
+                  );
+                })}
+
+                {/* Gateway Card for Skillsoft Wallet */}
+                <motion.a
+                  href="https://skillsoft.digitalbadges.skillsoft.com/profile/chaithanyapedhagali653656/wallet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "12px",
+                    padding: "1.5rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "1.5rem",
+                    transition: "all 0.2s ease",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0))"
+                  }}
+                  whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "var(--accent-orange)", x: 5 }}
+                >
+                  <div style={{
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgba(255,255,255,0.05)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "var(--accent-orange)",
+                    flexShrink: 0,
+                    overflow: "hidden"
+                  }}>
+                    <img src="https://www.google.com/s2/favicons?domain=skillsoft.com&sz=128" alt="Skillsoft Wallet" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: 1 }}>
+                    <h4 style={{ color: "var(--text-white)", fontSize: "1.2rem", margin: 0, fontWeight: 600 }}>Verified Digital Badge Wallet</h4>
+                    <p style={{ color: "var(--accent-orange)", fontSize: "1rem", margin: 0, fontWeight: 500 }}>200+ Verified Certifications</p>
+                    <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", margin: 0 }}>Software Engineering &bull; Data Analytics &bull; Cloud</p>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", color: "var(--text-white)", fontSize: "0.95rem", fontWeight: 500 }}>
+                    View Credential Collection &rarr;
+                  </div>
+                </motion.a>
+              </div>
+            </motion.div>
           </div>
 
           {/* Right Column: Stats Sidebar */}
@@ -115,9 +260,26 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               className="stat-card"
+              style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
             >
-              <span className="stat-number">4+</span>
-              <span className="stat-label">Years of Experience</span>
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                border: "1px solid rgba(255,255,255,0.05)",
+                backgroundColor: "rgba(255,255,255,0.02)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "var(--accent-orange)",
+                flexShrink: 0
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span className="stat-number">4+</span>
+                <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>Years of Experience</span>
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -125,9 +287,26 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
               className="stat-card"
+              style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
             >
-              <span className="stat-number">15+</span>
-              <span className="stat-label">REST APIs Developed</span>
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                border: "1px solid rgba(255,255,255,0.05)",
+                backgroundColor: "rgba(255,255,255,0.02)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "var(--accent-orange)",
+                flexShrink: 0
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span className="stat-number">15+</span>
+                <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>REST APIs Developed</span>
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -135,9 +314,26 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
               className="stat-card"
+              style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
             >
-              <span className="stat-number">30%</span>
-              <span className="stat-label">Performance Improvement</span>
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                border: "1px solid rgba(255,255,255,0.05)",
+                backgroundColor: "rgba(255,255,255,0.02)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "var(--accent-orange)",
+                flexShrink: 0
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span className="stat-number">30%</span>
+                <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>Performance Improvement</span>
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -145,9 +341,26 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
               className="stat-card"
+              style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
             >
-              <span className="stat-number">20%</span>
-              <span className="stat-label">Faster DB Queries</span>
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                border: "1px solid rgba(255,255,255,0.05)",
+                backgroundColor: "rgba(255,255,255,0.02)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "var(--accent-orange)",
+                flexShrink: 0
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span className="stat-number">20%</span>
+                <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>Faster DB Queries</span>
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
