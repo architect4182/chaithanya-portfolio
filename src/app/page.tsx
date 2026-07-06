@@ -293,7 +293,9 @@ export default function Home() {
               {[
                 {
                   role: "Information Technology Analyst",
-                  company: "NTT DATA (Client: Hanover Insurance Group)",
+                  company: "NTT DATA",
+                  client: "(Client: The Hanover Insurance Group)",
+                  logo: "/ntt-data.png",
                   year: "July 2022 - Present",
                   desc: [
                     <>Developed and maintained RESTful APIs and microservices using Java 11, Spring Boot, and Spring Security with role-based authentication and authorization (RBAC).</>,
@@ -328,7 +330,26 @@ export default function Home() {
                   <div className="exp-header">
                     <h3>{exp.role}</h3>
                   </div>
-                  <p className="exp-company">{exp.company}</p>
+                  <p className="exp-company" style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem", flexWrap: "wrap" }}>
+                    {exp.logo ? (
+                      <>
+                        <img
+                          src={exp.logo}
+                          alt={exp.company}
+                          style={{ height: "18px", width: "auto", objectFit: "contain" }}
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'inline';
+                          }}
+                        />
+                        <span style={{ display: 'none' }}>{exp.company}</span>
+                      </>
+                    ) : (
+                      <span>{exp.company}</span>
+                    )}
+                    {exp.client && <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>{exp.client}</span>}
+                  </p>
                   <div className="exp-desc">
                     <ul>
                       {exp.desc.map((item, idx) => (
@@ -468,15 +489,15 @@ export default function Home() {
                   </div>
 
 
-                <div className="project-info">
-                  <h3 style={{ color: "var(--text-white)" }}>{project.title}</h3>
-                  <p>{project.category}</p>
-                  {project.techStack && (
-                    <p className="project-tech">{project.techStack}</p>
-                  )}
+                  <div className="project-info">
+                    <h3 style={{ color: "var(--text-white)" }}>{project.title}</h3>
+                    <p>{project.category}</p>
+                    {project.techStack && (
+                      <p className="project-tech">{project.techStack}</p>
+                    )}
+                  </div>
                 </div>
-                </div>
-                
+
                 <div className="project-links-mobile">
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", whiteSpace: "nowrap" }}>
                     Live Demo
