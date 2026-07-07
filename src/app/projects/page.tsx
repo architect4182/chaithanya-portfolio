@@ -30,6 +30,15 @@ export default function ProjectsPage() {
       techStack: "React • Cloudinary • AI Journal"
     },
     {
+      title: "Figr",
+      category: "An E-comerce platform for 3D figures",
+      filterCategories: ["UI/UX", "Motion Design"],
+      image: "/figr.jpg",
+      link: "https://figr-alpha.vercel.app",
+      github: "https://github.com/architect4182/figr",
+      techStack: "TypeScript • React • Motion Design"
+    },
+    {
       title: "Aegis Protocol",
       category: "Interactive Sci-Fi Story Website",
       filterCategories: ["UI/UX"],
@@ -55,14 +64,14 @@ export default function ProjectsPage() {
       link: "https://glass-beat.vercel.app",
       github: "https://github.com/architect4182/glassbeat",
       techStack: "React • CSS • Web Audio API"
-    },
+    }
   ];
 
   const filteredProjects = filter === "All"
     ? allProjects
     : allProjects.filter(p => p.filterCategories.includes(filter));
 
-  const filters = ["All", "Data Analytics", "UI/UX", "API Keys"];
+  const filters = ["All", "Data Analytics", "UI/UX", "Motion Design", "API Keys"];
 
   return (
     <>
