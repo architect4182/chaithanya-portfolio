@@ -8,7 +8,7 @@ export default function ProjectsSection() {
     {
       title: "Apple Travel OS",
       category: "Next-Gen Travel Operating System",
-      image: "/apple-travel.jpg",
+      image: "/images/projects/apple-travel.jpg",
       link: "https://apple-travel-os.vercel.app",
       github: "https://github.com/architect4182/apple-travel-os",
       techStack: "Next.js • TypeScript • Framer Motion"
@@ -16,7 +16,7 @@ export default function ProjectsSection() {
     {
       title: "Moments OS",
       category: "Premium Memory & Journal Platform",
-      image: "/moments.jpg",
+      image: "/images/projects/moments.jpg",
       link: "https://moments-os.vercel.app",
       github: "https://github.com/architect4182/moments-os",
       techStack: "Next.js • TypeScript • Cloudinary • AI Journal"

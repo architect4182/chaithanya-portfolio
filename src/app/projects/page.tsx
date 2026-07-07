@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       title: "Apple Travel OS",
       category: "Next-Gen Travel Operating System",
       filterCategories: ["UI/UX"],
-      image: "/apple-travel.jpg",
+      image: "/images/projects/apple-travel.jpg",
       link: "https://apple-travel-os.vercel.app",
       github: "https://github.com/architect4182/apple-travel-os",
       techStack: "Next.js • TypeScript • Framer Motion"
@@ -24,16 +24,16 @@ export default function ProjectsPage() {
       title: "Moments OS",
       category: "Premium Memory & Journal Platform",
       filterCategories: ["UI/UX"],
-      image: "/moments.jpg",
+      image: "/images/projects/moments.jpg",
       link: "https://moments-os.vercel.app",
       github: "https://github.com/architect4182/moments-os",
       techStack: "React • Cloudinary • AI Journal"
     },
     {
       title: "Figr",
-      category: "An E-comerce platform for 3D figures",
-      filterCategories: ["UI/UX", "Motion Design"],
-      image: "/figr.jpg",
+      category: "An E-commerce for 3D figures",
+      filterCategories: ["UI/UX", "Motion Design", "Products"],
+      image: "/images/projects/figr.jpg",
       link: "https://figr-alpha.vercel.app",
       github: "https://github.com/architect4182/figr",
       techStack: "TypeScript • React • Motion Design"
@@ -42,16 +42,25 @@ export default function ProjectsPage() {
       title: "Aegis Protocol",
       category: "Interactive Sci-Fi Story Website",
       filterCategories: ["UI/UX"],
-      image: "/aegis-protocol.jpg",
+      image: "/images/projects/aegis-protocol.jpg",
       link: "https://aegis-protocol-omega.vercel.app",
       github: "https://github.com/architect4182/aegis-protocol",
       techStack: "JavaScript"
     },
     {
+      title: "Velora",
+      category: "Premium E-Commerce Chocolate",
+      filterCategories: ["UI/UX", "Motion Design", "Products"],
+      image: "/images/projects/velora.jpg",
+      link: "https://velora-beryl-gamma.vercel.app",
+      github: "https://github.com/architect4182/velora",
+      techStack: "React • TypeScript • Tailwind CSS • Vite"
+    },
+    {
       title: "AtmosVerse",
       category: "Cinematic Entertainment Platform",
       filterCategories: ["UI/UX", "API Keys"],
-      image: "/atmos.jpg",
+      image: "/images/projects/atmos.jpg",
       link: "https://atmos-verse.vercel.app",
       github: "https://github.com/architect4182/atmos-verse",
       techStack: "React • Context API • Framer Motion"
@@ -60,7 +69,7 @@ export default function ProjectsPage() {
       title: "GlassBeat",
       category: "Glassmorphism Music Player",
       filterCategories: ["UI/UX", "API Keys"],
-      image: "/glassbeat.jpg",
+      image: "/images/projects/glassbeat.jpg",
       link: "https://glass-beat.vercel.app",
       github: "https://github.com/architect4182/glassbeat",
       techStack: "React • CSS • Web Audio API"
@@ -71,7 +80,7 @@ export default function ProjectsPage() {
     ? allProjects
     : allProjects.filter(p => p.filterCategories.includes(filter));
 
-  const filters = ["All", "Data Analytics", "UI/UX", "Motion Design", "API Keys"];
+  const filters = ["All", "Data Analytics", "UI/UX", "Motion Design", "Products", "API Keys"];
 
   return (
     <>
