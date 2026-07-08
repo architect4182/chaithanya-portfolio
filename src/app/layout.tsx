@@ -12,6 +12,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import SmoothScroll from "../components/SmoothScroll";
+
 export const metadata: Metadata = {
   title: "Chaithanya | Portfolio",
   description: "Portfolio of Chaithanya Pedhagali, Full Stack Developer and Data Analyst",
@@ -24,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

@@ -182,23 +182,16 @@ export default function ProjectsPage() {
                   <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
 
                   {project.video && (
-                    <div
-                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}
-                      dangerouslySetInnerHTML={{
-                        __html: `
-                          <video
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            poster="${project.image}"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
-                          >
-                            <source src="${project.video}" type="video/mp4" />
-                          </video>
-                        `
-                      }}
-                    />
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={project.image}
+                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                    >
+                      <source src={project.video} type="video/mp4" />
+                    </video>
                   )}
                   <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%)", zIndex: 1, pointerEvents: "none" }} />
                   <div className="project-links desktop-links-only">
