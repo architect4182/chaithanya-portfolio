@@ -168,7 +168,8 @@ export default function ExperienceSection() {
                   gap: "1.5rem",
                   transition: "all 0.2s ease",
                   cursor: "pointer",
-                  textDecoration: "none"
+                  textDecoration: "none",
+                  flexWrap: "wrap" as const
                 };
 
                 return cert.link ? (
@@ -217,6 +218,7 @@ export default function ExperienceSection() {
                   padding: "1.5rem",
                   display: "flex",
                   alignItems: "center",
+                  flexWrap: "wrap",
                   gap: "1.5rem",
                   transition: "all 0.2s ease",
                   cursor: "pointer",
@@ -239,7 +241,7 @@ export default function ExperienceSection() {
                 }}>
                   <img src="https://www.google.com/s2/favicons?domain=skillsoft.com&sz=128" alt="Skillsoft Wallet" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
                 </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: 1 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: "1 1 200px" }}>
                   <h4 style={{ color: "var(--text-white)", fontSize: "1.2rem", margin: 0, fontWeight: 600 }}>Verified Digital Badge Wallet</h4>
                   <p style={{ color: "var(--accent-orange)", fontSize: "1rem", margin: 0, fontWeight: 500 }}>200+ Verified Certifications</p>
                   <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", margin: 0 }}>Skillsoft - Java &bull; GitHub &bull; AI &bull; Data Analytics &bull; Cloud</p>

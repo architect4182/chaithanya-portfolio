@@ -7,10 +7,10 @@ export default function ProjectsSection() {
   const displayedProjects = [
     {
       title: "Bowlz",
-      category: "An E-commerce for smoothies",
+      category: "An E-commerce for smoothie bowls",
       video: "https://res.cloudinary.com/difofj393/video/upload/bowlz_h2y1dj.mp4",
-      image: "/projects/bolwz.jpg",
-      link: "https://github.com/architect4182/bowlz",
+      image: "/projects/bowlz.jpg",
+      link: "https://bowlz.vercel.app",
       github: "https://github.com/architect4182/bowlz",
       techStack: "Next.js • TypeScript"
     },
@@ -66,7 +66,7 @@ export default function ProjectsSection() {
                 }}
               >
                 <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
-                
+
                 {project.video && (
                   <div
                     style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}

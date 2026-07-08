@@ -16,6 +16,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
     color: var(--text-white);
     -webkit-font-smoothing: antialiased;
     line-height: 1.8;
+    overflow-x: hidden;
 }
 
 /* Hero Section Gradient Background */
@@ -709,7 +711,7 @@ body {
 @media (max-width: 768px) {
     .experience-sidebar {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
