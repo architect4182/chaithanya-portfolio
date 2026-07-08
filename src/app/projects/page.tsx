@@ -12,6 +12,16 @@ export default function ProjectsPage() {
 
   const allProjects = [
     {
+      title: "Bowlz",
+      category: "An E-commerce for Bowl Smoothies",
+      filterCategories: ["Products", "UI/UX", "Motion Design"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/bowlz_h2y1dj.mp4",
+      image: "/projects/bowlz.jpg",
+      link: "https://github.com/architect4182/bowlz",
+      github: "https://github.com/architect4182/bowlz",
+      techStack: "Next.js • TypeScript"
+    },
+    {
       title: "Apple Travel OS",
       category: "Next-Gen Travel Operating System",
       filterCategories: ["UI/UX"],
@@ -33,6 +43,7 @@ export default function ProjectsPage() {
       title: "Figr",
       category: "An E-commerce for 3D figures",
       filterCategories: ["UI/UX", "Motion Design", "Products"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/figr_ukkxjp.mp4",
       image: "/projects/figr.jpg",
       link: "https://figr-alpha.vercel.app",
       github: "https://github.com/architect4182/figr",
@@ -51,6 +62,7 @@ export default function ProjectsPage() {
       title: "Velora",
       category: "Premium E-Commerce Chocolate",
       filterCategories: ["UI/UX", "Motion Design", "Products"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/velora_hiathz.mp4",
       image: "/projects/velora.jpg",
       link: "https://velora-beryl-gamma.vercel.app",
       github: "https://github.com/architect4182/velora",
@@ -60,6 +72,7 @@ export default function ProjectsPage() {
       title: "Lumora",
       category: "Cinematic Hero Interface",
       filterCategories: ["UI/UX", "Motion Design"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/lumora_lojofc.mp4",
       image: "/projects/lumora.jpg",
       link: "https://lumora-sage.vercel.app",
       github: "https://github.com/architect4182/lumora",
@@ -160,13 +173,34 @@ export default function ProjectsPage() {
                 <div
                   className="project-card"
                   style={{
-                    backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%), url(${project.image})`,
                     position: "relative",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "flex-end"
                   }}
                 >
+                  {/* @ts-ignore */}
+                  {!project.video && (
+                    <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
+                  )}
+                  {/* @ts-ignore */}
+                  {project.video && (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      onEnded={(e) => {
+                        const target = e.target as HTMLVideoElement;
+                        target.play();
+                      }}
+                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                    >
+                      {/* @ts-ignore */}
+                      <source src={project.video} type="video/mp4" />
+                    </video>
+                  )}
+                  <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%)", zIndex: 1, pointerEvents: "none" }} />
                   <div className="project-links desktop-links-only">
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", whiteSpace: "nowrap" }}>
                       Live Demo
