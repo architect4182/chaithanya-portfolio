@@ -17,9 +17,9 @@ export default function ProjectsPage() {
       filterCategories: ["Products", "UI/UX", "Motion Design"],
       video: "https://res.cloudinary.com/difofj393/video/upload/bowlz_h2y1dj.mp4",
       image: "/projects/bowlz.jpg",
-      link: "https://github.com/architect4182/bowlz",
+      link: "https://bowlz.vercel.app",
       github: "https://github.com/architect4182/bowlz",
-      techStack: "Next.js • TypeScript"
+      techStack: "Next.js • TypeScript • Motion Design"
     },
     {
       title: "Figr",
@@ -180,7 +180,7 @@ export default function ProjectsPage() {
                   }}
                 >
                   <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
-                  
+
                   {project.video && (
                     <div
                       style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}

@@ -9,7 +9,7 @@ export default function ProjectsSection() {
       title: "Bowlz",
       category: "An E-commerce for smoothies",
       video: "https://res.cloudinary.com/difofj393/video/upload/bowlz_h2y1dj.mp4",
-      image: "/projects/bowlz.jpg",
+      image: "/projects/bolwz.jpg",
       link: "https://github.com/architect4182/bowlz",
       github: "https://github.com/architect4182/bowlz",
       techStack: "Next.js • TypeScript"
