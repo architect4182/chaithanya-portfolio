@@ -65,10 +65,8 @@ export default function ProjectsSection() {
                   justifyContent: "flex-end"
                 }}
               >
-                {/* @ts-ignore */}
-                {!project.video && (
-                  <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
-                )}
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
+                
                 {/* @ts-ignore */}
                 {project.video && (
                   <video
@@ -76,6 +74,7 @@ export default function ProjectsSection() {
                     loop
                     muted
                     playsInline
+                    poster={project.image}
                     onEnded={(e) => {
                       const target = e.target as HTMLVideoElement;
                       target.play();
