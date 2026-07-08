@@ -7,7 +7,7 @@ export default function ProjectsSection() {
   const displayedProjects = [
     {
       title: "Bowlz",
-      category: "An e-commerce for smoothies",
+      category: "An E-commerce for smoothies",
       video: "https://res.cloudinary.com/difofj393/video/upload/bowlz_h2y1dj.mp4",
       image: "/projects/bowlz.jpg",
       link: "https://github.com/architect4182/bowlz",
@@ -15,20 +15,14 @@ export default function ProjectsSection() {
       techStack: "Next.js • TypeScript"
     },
     {
-      title: "Apple Travel OS",
-      category: "Next-Gen Travel Operating System",
-      image: "/projects/apple-travel.jpg",
-      link: "https://apple-travel-os.vercel.app",
-      github: "https://github.com/architect4182/apple-travel-os",
-      techStack: "Next.js • TypeScript • Framer Motion"
-    },
-    {
-      title: "Moments OS",
-      category: "Premium Memory & Journal Platform",
-      image: "/projects/moments.jpg",
-      link: "https://moments-os.vercel.app",
-      github: "https://github.com/architect4182/moments-os",
-      techStack: "Next.js • TypeScript • Cloudinary • AI Journal"
+      title: "Figr",
+      category: "An E-commerce for 3D figures",
+      filterCategories: ["UI/UX", "Motion Design", "Products"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/figr_ukkxjp.mp4",
+      image: "/projects/figr.jpg",
+      link: "https://figr-alpha.vercel.app",
+      github: "https://github.com/architect4182/figr",
+      techStack: "TypeScript • React • Motion Design"
     }
   ];
 

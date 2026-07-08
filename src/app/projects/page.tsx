@@ -22,24 +22,6 @@ export default function ProjectsPage() {
       techStack: "Next.js • TypeScript"
     },
     {
-      title: "Apple Travel OS",
-      category: "Next-Gen Travel Operating System",
-      filterCategories: ["UI/UX"],
-      image: "/projects/apple-travel.jpg",
-      link: "https://apple-travel-os.vercel.app",
-      github: "https://github.com/architect4182/apple-travel-os",
-      techStack: "Next.js • TypeScript • Framer Motion"
-    },
-    {
-      title: "Moments OS",
-      category: "Premium Memory & Journal Platform",
-      filterCategories: ["UI/UX"],
-      image: "/projects/moments.jpg",
-      link: "https://moments-os.vercel.app",
-      github: "https://github.com/architect4182/moments-os",
-      techStack: "React • Cloudinary • AI Journal"
-    },
-    {
       title: "Figr",
       category: "An E-commerce for 3D figures",
       filterCategories: ["UI/UX", "Motion Design", "Products"],
@@ -50,13 +32,13 @@ export default function ProjectsPage() {
       techStack: "TypeScript • React • Motion Design"
     },
     {
-      title: "Aegis Protocol",
-      category: "Interactive Sci-Fi Story Website",
+      title: "Apple Travel OS",
+      category: "Next-Gen Travel Operating System",
       filterCategories: ["UI/UX"],
-      image: "/projects/aegis-protocol.jpg",
-      link: "https://aegis-protocol-omega.vercel.app",
-      github: "https://github.com/architect4182/aegis-protocol",
-      techStack: "JavaScript"
+      image: "/projects/apple-travel.jpg",
+      link: "https://apple-travel-os.vercel.app",
+      github: "https://github.com/architect4182/apple-travel-os",
+      techStack: "Next.js • TypeScript • Framer Motion"
     },
     {
       title: "Velora",
@@ -69,6 +51,15 @@ export default function ProjectsPage() {
       techStack: "React • TypeScript • Tailwind CSS • Vite"
     },
     {
+      title: "Moments OS",
+      category: "Premium Memory & Journal Platform",
+      filterCategories: ["UI/UX"],
+      image: "/projects/moments.jpg",
+      link: "https://moments-os.vercel.app",
+      github: "https://github.com/architect4182/moments-os",
+      techStack: "React • Cloudinary • AI Journal"
+    },
+    {
       title: "Lumora",
       category: "Cinematic Hero Interface",
       filterCategories: ["UI/UX", "Motion Design"],
@@ -77,6 +68,15 @@ export default function ProjectsPage() {
       link: "https://lumora-sage.vercel.app",
       github: "https://github.com/architect4182/lumora",
       techStack: "Next.js • TypeScript • Framer Motion"
+    },
+    {
+      title: "Aegis Protocol",
+      category: "Interactive Sci-Fi Story Website",
+      filterCategories: ["UI/UX"],
+      image: "/projects/aegis-protocol.jpg",
+      link: "https://aegis-protocol-omega.vercel.app",
+      github: "https://github.com/architect4182/aegis-protocol",
+      techStack: "JavaScript"
     },
     {
       title: "AtmosVerse",
