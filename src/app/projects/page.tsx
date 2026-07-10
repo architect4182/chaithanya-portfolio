@@ -70,32 +70,15 @@ export default function ProjectsPage() {
       techStack: "Next.js • TypeScript • Framer Motion"
     },
     {
-      title: "Aegis Protocol",
-      category: "Interactive Sci-Fi Story Website",
-      filterCategories: ["UI/UX"],
-      image: "/projects/aegis-protocol.jpg",
-      link: "https://aegis-protocol-omega.vercel.app",
-      github: "https://github.com/architect4182/aegis-protocol",
-      techStack: "JavaScript"
+      title: "Vanguard",
+      category: "Modern Web Application",
+      filterCategories: ["UI/UX", "Motion Design"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/vanguard_ri94cc.mp4",
+      image: "/projects/vanguard.png",
+      link: "https://vanguard-seven-rho.vercel.app",
+      github: "https://github.com/architect4182/vanguard",
+      techStack: "Next.js • TypeScript"
     },
-    {
-      title: "AtmosVerse",
-      category: "Cinematic Entertainment Platform",
-      filterCategories: ["UI/UX", "API Keys"],
-      image: "/projects/atmos.jpg",
-      link: "https://atmos-verse.vercel.app",
-      github: "https://github.com/architect4182/atmos-verse",
-      techStack: "React • Context API • Framer Motion"
-    },
-    {
-      title: "GlassBeat",
-      category: "Glassmorphism Music Player",
-      filterCategories: ["UI/UX", "API Keys"],
-      image: "/projects/glassbeat.jpg",
-      link: "https://glass-beat.vercel.app",
-      github: "https://github.com/architect4182/glassbeat",
-      techStack: "React • CSS • Web Audio API"
-    }
   ];
 
   const filteredProjects = filter === "All"
