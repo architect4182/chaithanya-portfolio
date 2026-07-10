@@ -90,7 +90,7 @@ export default function ProjectsPage() {
   return (
     <>
       <FloatingDock />
-      <div style={{ padding: "2rem 5% 0 5%" }}>
+      <div style={{ padding: "1rem 5% 0 5%" }}>
         <Navbar />
       </div>
 
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="section-container"
-        style={{ minHeight: "60vh", paddingTop: "2rem" }}
+        style={{ minHeight: "60vh", paddingTop: "0rem" }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "3rem", flexWrap: "wrap", gap: "2rem" }}>
           <div>
@@ -108,22 +108,6 @@ export default function ProjectsPage() {
               Building products that combine engineering,<br />design and analytics.
             </p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            style={{ flex: "1 1 300px", display: "flex", justifyContent: "flex-end" }}
-          >
-            <img src="/projects.png" alt="Projects Graphic" style={{
-              width: "100%",
-              maxWidth: "400px",
-              height: "auto",
-              objectFit: "contain",
-              WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent), linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
-              WebkitMaskComposite: "source-in",
-              maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent), linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)"
-            }} />
-          </motion.div>
         </div>
 
         <div style={{ height: "1px", background: "rgba(255,255,255,0.1)", marginBottom: "3rem", width: "100%" }}></div>

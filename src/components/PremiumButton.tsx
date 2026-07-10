@@ -29,7 +29,7 @@ export default function PremiumButton({ href, onClick, children, className = "",
           width: "42px",
           height: "42px",
           borderRadius: "50%",
-          backgroundColor: "var(--accent-orange)",
+          backgroundColor: "var(--accent-primary)",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -43,7 +43,7 @@ export default function PremiumButton({ href, onClick, children, className = "",
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="white"
+          stroke="#000000"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"

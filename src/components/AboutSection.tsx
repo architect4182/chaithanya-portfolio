@@ -14,7 +14,7 @@ export default function AboutSection() {
         className="section-container"
       >
         <div className="about-header">
-          <span style={{ color: "var(--accent-orange)", fontWeight: 600, fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "1px" }}>About Me</span>
+          <span style={{ color: "var(--accent-primary)", fontWeight: 600, fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "1px" }}>About Me</span>
           <h2 className="section-title" style={{ marginBottom: "3rem", marginTop: "0.5rem" }}>The person behind the code</h2>
         </div>
 
@@ -67,17 +67,17 @@ export default function AboutSection() {
               {
                 title: "Business Intelligence",
                 desc: "Transforming raw data into actionable insights through dashboards and data visualization.",
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-orange)" }}><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-primary)" }}><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
               },
               {
                 title: "Software Development",
                 desc: "Building modern web applications and enterprise systems using proven engineering practices.",
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-orange)" }}><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-primary)" }}><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
               },
               {
                 title: "Data-Driven Solutions",
                 desc: "Combining analytics and engineering to solve business problems and improve decision-making.",
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-orange)" }}><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-primary)" }}><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
               },
             ].map((card, i) => (
               <motion.div
@@ -117,7 +117,7 @@ export default function AboutSection() {
                 </div>
                 <motion.div
                   variants={{ initial: { width: "0%" }, hover: { width: "100%" } }}
-                  style={{ position: "absolute", bottom: 0, left: 0, height: "2px", backgroundColor: "var(--accent-orange)" }}
+                  style={{ position: "absolute", bottom: 0, left: 0, height: "2px", backgroundColor: "var(--accent-primary)" }}
                 />
               </motion.div>
             ))}

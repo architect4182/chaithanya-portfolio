@@ -44,7 +44,7 @@ export default function ContactSection() {
                   Thanks for visiting my portfolio. I look forward to connecting.
                 </p>
                 <motion.div
-                  style={{ height: "2px", backgroundColor: "var(--accent-orange)", width: "65px" }}
+                  style={{ height: "2px", backgroundColor: "var(--accent-primary)", width: "65px" }}
                   initial={{ scaleX: 0, transformOrigin: "left" }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -69,10 +69,10 @@ export default function ContactSection() {
                 maxWidth: "1000px",
                 height: "auto",
                 objectFit: "contain",
-                WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent), linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
-                WebkitMaskComposite: "source-in",
-                maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent), linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
-                maskComposite: "intersect"
+                filter: "grayscale(100%) contrast(1.2) brightness(0.9)",
+                mixBlendMode: "lighten",
+                WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)",
+                maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)",
               }}
             />
           </motion.div>

@@ -84,7 +84,7 @@ export default function FloatingDock() {
               href={item.href}
               target={item.target}
               rel={item.target ? "noopener noreferrer" : undefined}
-              whileHover={{ y: -10, scale: 1.3, color: "var(--accent-orange)" }}
+              whileHover={{ y: -10, scale: 1.3, color: "var(--accent-primary)" }}
               whileTap={{ scale: 0.9 }}
               style={{
                 color: "var(--text-white)",

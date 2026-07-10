@@ -37,7 +37,7 @@ export default function ProjectsSection() {
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "3rem", gap: "1rem" }}>
         <h2 className="section-title" style={{ marginBottom: 0 }}>Selected Projects</h2>
-        <Link href="/projects" style={{ textDecoration: "none", color: "var(--accent-orange)", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "1.1rem", whiteSpace: "nowrap" }}>
+        <Link href="/projects" style={{ textDecoration: "none", color: "var(--accent-primary)", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "1.1rem", whiteSpace: "nowrap" }}>
           View All <span style={{ transition: "transform 0.2s" }} className="hover-arrow">→</span>
         </Link>
       </div>

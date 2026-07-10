@@ -37,9 +37,9 @@ export default function ExperienceSection() {
                 desc: [
                   <>Developed and maintained RESTful APIs and microservices using Java 11, Spring Boot, and Spring Security with role-based authentication and authorization (RBAC).</>,
                   <>Designed and implemented core insurance workflow modules, including policy creation, endorsements, renewals, cancellations, and claims processing, while integrating SOAP and REST services with external SOAP and REST APIs.</>,
-                  <>Optimized Oracle and Microsoft SQL Server database queries, improving data retrieval performance by <strong style={{ color: "var(--accent-orange)" }}>20%</strong> and enhancing overall application efficiency.</>,
-                  <>Built responsive Angular applications using TypeScript, HTML5, CSS3, and reusable component architecture, improving frontend development efficiency by <strong style={{ color: "var(--accent-orange)" }}>25%</strong>.</>,
-                  <>Implemented lazy loading, route optimization, and performance enhancements, reducing application load times by <strong style={{ color: "var(--accent-orange)" }}>30%</strong>.</>,
+                  <>Optimized Oracle and Microsoft SQL Server database queries, improving data retrieval performance by <strong style={{ color: "var(--accent-primary)" }}>20%</strong> and enhancing overall application efficiency.</>,
+                  <>Built responsive Angular applications using TypeScript, HTML5, CSS3, and reusable component architecture, improving frontend development efficiency by <strong style={{ color: "var(--accent-primary)" }}>25%</strong>.</>,
+                  <>Implemented lazy loading, route optimization, and performance enhancements, reducing application load times by <strong style={{ color: "var(--accent-primary)" }}>30%</strong>.</>,
                   <>Collaborated in Agile/Scrum teams, participating in sprint planning, code reviews, UAT, and CI/CD pipelines to deliver high-quality enterprise applications.</>
                 ]
               },
@@ -141,7 +141,7 @@ export default function ExperienceSection() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      color: "var(--accent-orange)",
+                      color: "var(--accent-primary)",
                       flexShrink: 0,
                       overflow: "hidden"
                     }}>
@@ -225,7 +225,7 @@ export default function ExperienceSection() {
                   textDecoration: "none",
                   backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0))"
                 }}
-                whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "var(--accent-orange)", x: 5 }}
+                whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "var(--accent-primary)", x: 5 }}
               >
                 <div style={{
                   width: "48px",
@@ -235,7 +235,7 @@ export default function ExperienceSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "var(--accent-orange)",
+                  color: "var(--accent-primary)",
                   flexShrink: 0,
                   overflow: "hidden"
                 }}>
@@ -243,7 +243,7 @@ export default function ExperienceSection() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: "1 1 200px" }}>
                   <h4 style={{ color: "var(--text-white)", fontSize: "1.2rem", margin: 0, fontWeight: 600 }}>Verified Digital Badge Wallet</h4>
-                  <p style={{ color: "var(--accent-orange)", fontSize: "1rem", margin: 0, fontWeight: 500 }}>200+ Verified Certifications</p>
+                  <p style={{ color: "var(--accent-primary)", fontSize: "1rem", margin: 0, fontWeight: 500 }}>200+ Verified Certifications</p>
                   <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", margin: 0 }}>Skillsoft - Java &bull; GitHub &bull; AI &bull; Data Analytics &bull; Cloud</p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", color: "var(--text-white)", fontSize: "0.95rem", fontWeight: 500 }}>
@@ -273,7 +273,7 @@ export default function ExperienceSection() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "var(--accent-orange)",
+              color: "var(--accent-primary)",
               flexShrink: 0
             }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -300,7 +300,7 @@ export default function ExperienceSection() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "var(--accent-orange)",
+              color: "var(--accent-primary)",
               flexShrink: 0
             }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
@@ -327,7 +327,7 @@ export default function ExperienceSection() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "var(--accent-orange)",
+              color: "var(--accent-primary)",
               flexShrink: 0
             }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
@@ -354,7 +354,7 @@ export default function ExperienceSection() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "var(--accent-orange)",
+              color: "var(--accent-primary)",
               flexShrink: 0
             }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
@@ -381,6 +381,22 @@ export default function ExperienceSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 + (i * 0.05) }}
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+
+            <span className="stat-label" style={{ marginBottom: "0.5rem", marginTop: "1.5rem", display: "block" }}>AI & Design Tools</span>
+            <div className="tech-grid">
+              {["GitHub Copilot", "ChatGPT", "Claude", "Google Gemini", "Codex", "Framer"].map((tech, i) => (
+                <motion.span
+                  key={tech}
+                  className="tech-tag"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7 + (i * 0.05) }}
                 >
                   {tech}
                 </motion.span>
