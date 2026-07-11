@@ -79,7 +79,6 @@ export default function ProjectsSection() {
                     <source src={project.video} type="video/mp4" />
                   </video>
                 )}
-                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%)", zIndex: 1, pointerEvents: "none" }} />
                 <div className="project-links desktop-links-only">
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", whiteSpace: "nowrap" }}>
                     Live Demo
@@ -88,17 +87,17 @@ export default function ProjectsSection() {
                     GitHub
                   </a>
                 </div>
-
-                <div className="project-info">
-                  <h3 style={{ color: "var(--text-white)" }}>{project.title}</h3>
-                  <p>{project.category}</p>
-                  {project.techStack && (
-                    <p className="project-tech">{project.techStack}</p>
-                  )}
-                </div>
               </div>
 
-              <div className="project-links-mobile">
+              <div className="project-info" style={{ marginTop: "1.25rem" }}>
+                <h3 style={{ color: "var(--text-white)", fontSize: "1.5rem", fontWeight: 700, margin: 0, marginBottom: "0.25rem" }}>{project.title}</h3>
+                <p style={{ color: "var(--text-muted)", margin: 0, fontSize: "1rem" }}>{project.category}</p>
+                {project.techStack && (
+                  <p style={{ color: "var(--accent-primary)", fontSize: "0.85rem", fontWeight: 500, margin: 0, marginTop: "0.5rem" }}>{project.techStack}</p>
+                )}
+              </div>
+
+              <div className="project-links-mobile" style={{ marginTop: "1rem" }}>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", whiteSpace: "nowrap" }}>
                   Live Demo
                 </a>
@@ -106,6 +105,10 @@ export default function ProjectsSection() {
                   GitHub
                 </a>
               </div>
+
+              {i < displayedProjects.length - 1 && (
+                <div className="mobile-project-divider" />
+              )}
             </motion.div>
           ))}
         </AnimatePresence>
