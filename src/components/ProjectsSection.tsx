@@ -9,11 +9,11 @@ export default function ProjectsSection() {
       title: "Apple Universe",
       category: "Next-Gen Apple Universe OS",
       filterCategories: ["UI/UX", "Products", "Motion Design"],
-      video: "https://res.cloudinary.com/difofj393/video/upload/apple-universe_iopd9r.mp4",
+      video: "https://res.cloudinary.com/difofj393/video/upload/apple-universe_qs2fza.mp4",
       image: "/projects/apple-universe.png",
       link: "https://chay-apple-universe.vercel.app",
       github: "https://github.com/architect4182/apple-universe",
-      techStack: "React • TypeScript • UI/UX"
+      techStack: "React • TypeScript • UI/UX • Motion Design"
     },
     {
       title: "Bowlz",
