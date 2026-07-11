@@ -54,28 +54,6 @@ export default function ContactSection() {
             </motion.div>
           </div>
 
-          <motion.div
-            style={{ flex: "1.5 1 600px", display: "flex", justifyContent: "center" }}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <img
-              src="/contact-hero.jpg"
-              alt="Developer working at desk"
-              style={{
-                width: "100%",
-                maxWidth: "1000px",
-                height: "auto",
-                objectFit: "contain",
-                filter: "grayscale(100%) contrast(1.2) brightness(0.9)",
-                mixBlendMode: "lighten",
-                WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)",
-                maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)",
-              }}
-            />
-          </motion.div>
         </div>
       </motion.section>
   );

@@ -1,8 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AiFillOpenAI } from "react-icons/ai";
 
 export default function ExperienceSection() {
+  const aiTools = [
+    { name: "ChatGPT", desc: "Conversational AI & Problem Solving", icon: <AiFillOpenAI size={18} color="#FFFFFF" /> },
+    { name: "Claude", desc: "Advanced Reasoning & Coding", slug: "claude", color: "D97757" },
+    { name: "Google Gemini", desc: "Multimodal AI Integration", slug: "googlegemini", color: "8E75B2" },
+    { name: "Copilot", desc: "AI Assistant & Pair Programmer", customImg: "/copilot.png" },
+    { name: "Grok", desc: "Real-time AI Intelligence", customImg: "/grok.png", invert: true },
+    { name: "Codex", desc: "Code Generation Engine", icon: <AiFillOpenAI size={18} color="#10A37F" /> },
+    { name: "Antigravity", desc: "Agentic AI Workflow", customImg: "/antigravity.png" },
+    { name: "Figma", desc: "Collaborative Interface Design", customImg: "/figma.png" },
+    { name: "Framer", desc: "AI-Powered Web Design", slug: "framer", color: "white" },
+  ];
+
   return (
     <motion.section
       id="experience"
@@ -386,20 +399,62 @@ export default function ExperienceSection() {
                 </motion.span>
               ))}
             </div>
-
-            <span className="stat-label" style={{ marginBottom: "0.5rem", marginTop: "1.5rem", display: "block" }}>AI & Design Tools</span>
-            <div className="tech-grid">
-              {["GitHub Copilot", "ChatGPT", "Claude", "Google Gemini", "Codex", "Framer"].map((tech, i) => (
-                <motion.span
-                  key={tech}
-                  className="tech-tag"
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7 }}
+            className="stat-card"
+          >
+            <span className="stat-label" style={{ marginBottom: "1rem", display: "block" }}>AI & Design Ecosystem</span>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
+              {aiTools.map((tool, i) => (
+                <motion.div
+                  key={tool.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.7 + (i * 0.05) }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    backgroundColor: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(255,255,255,0.05)",
+                    padding: "0.4rem 0.8rem",
+                    borderRadius: "8px",
+                  }}
                 >
-                  {tech}
-                </motion.span>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "18px", height: "18px" }}>
+                    {tool.slug ? (
+                      <img
+                        src={`https://cdn.simpleicons.org/${tool.slug}/${tool.color}`}
+                        alt={`${tool.name} logo`}
+                        width={18}
+                        height={18}
+                        style={{ display: "block" }}
+                      />
+                    ) : tool.customImg ? (
+                      <img
+                        src={tool.customImg}
+                        alt={`${tool.name} logo`}
+                        width={18}
+                        height={18}
+                        style={{
+                          display: "block",
+                          objectFit: "contain",
+                          filter: tool.invert ? "invert(1) brightness(100)" : "none"
+                        }}
+                      />
+                    ) : (
+                      tool.icon
+                    )}
+                  </div>
+                  <span style={{ color: "var(--text-white)", fontSize: "0.85rem", fontWeight: 500 }}>
+                    {tool.name}
+                  </span>
+                </motion.div>
               ))}
             </div>
           </motion.div>
