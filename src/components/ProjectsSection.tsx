@@ -6,6 +6,16 @@ import Link from "next/link";
 export default function ProjectsSection() {
   const displayedProjects = [
     {
+      title: "Apple Universe",
+      category: "Next-Gen Apple Universe OS",
+      filterCategories: ["UI/UX", "Products", "Motion Design"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/apple-universe_iopd9r.mp4",
+      image: "/projects/apple-universe.png",
+      link: "https://chay-apple-universe.vercel.app",
+      github: "https://github.com/architect4182/apple-universe",
+      techStack: "React • TypeScript • UI/UX"
+    },
+    {
       title: "Bowlz",
       category: "An E-commerce for smoothie bowls",
       video: "https://res.cloudinary.com/difofj393/video/upload/bowlz_h2y1dj.mp4",
@@ -14,16 +24,6 @@ export default function ProjectsSection() {
       github: "https://github.com/architect4182/bowlz",
       techStack: "Next.js • TypeScript"
     },
-    {
-      title: "Figr",
-      category: "An E-commerce for 3D figures",
-      filterCategories: ["UI/UX", "Motion Design", "Products"],
-      video: "https://res.cloudinary.com/difofj393/video/upload/figr_ukkxjp.mp4",
-      image: "/projects/figr.jpg",
-      link: "https://figr-alpha.vercel.app",
-      github: "https://github.com/architect4182/figr",
-      techStack: "TypeScript • React • Motion Design"
-    }
   ];
 
   return (

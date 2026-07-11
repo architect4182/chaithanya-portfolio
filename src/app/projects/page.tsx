@@ -12,6 +12,16 @@ export default function ProjectsPage() {
 
   const allProjects = [
     {
+      title: "Apple Universe",
+      category: "Next-Gen Apple Universe OS",
+      filterCategories: ["UI/UX", "Products", "Motion Design"],
+      video: "https://res.cloudinary.com/difofj393/video/upload/apple-universe_iopd9r.mp4",
+      image: "/projects/apple-universe.png",
+      link: "https://chay-apple-universe.vercel.app",
+      github: "https://github.com/architect4182/apple-universe",
+      techStack: "Next.js • TypeScript • UI/UX"
+    },
+    {
       title: "Bowlz",
       category: "An E-commerce for Bowl Smoothies",
       filterCategories: ["Products", "UI/UX", "Motion Design"],
