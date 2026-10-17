@@ -1,7 +1,7 @@
 "use client";
 
-import { useId } from "react";
-import { motion, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import { cn } from "@/lib/utils";
 
@@ -90,11 +90,11 @@ export function CustomMorph() {
   return (
     <MorphText
       words={["FullStack Developer", "UI/UX Designer", "Data Analyst"]}
-      interval={2500}
+      interval={2800}
       subtext="Crafting Seamless Digital Experiences."
       fontSize="clamp(2rem, 10vw, 8rem)"
     />
-  )
+  );
 }
 
 export interface MorphTextProps {
@@ -110,7 +110,7 @@ export interface MorphTextProps {
 
 export function MorphText({
   words = ["DESIGN", "DEVELOP"],
-  interval = 3000,
+  interval = 2800,
   subtext,
   fontSize = "clamp(3rem, 15vw, 10rem)",
   fontFamily = '"Space Grotesk", sans-serif',
@@ -118,81 +118,44 @@ export function MorphText({
   textClassName,
   subtextClassName,
 }: MorphTextProps) {
-  const uid = useId().replace(/:/g, "");
-  const filterId = `morph-threshold-${uid}`;
+  const [index, setIndex] = useState(0);
 
-  const totalDuration = (interval / 1000) * words.length;
-  const wordDuration = interval / 1000;
-
-  const wordStyles = words.map((_, i) => ({
-    animationDelay: `${i * wordDuration}s`,
-    animationDuration: `${totalDuration}s`,
-  }));
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [words.length, interval]);
 
   return (
     <div className={cn("morph-text-root", className)}>
-      <svg
-        aria-hidden="true"
-        focusable="false"
-        style={{ position: "absolute", width: 0, height: 0, pointerEvents: "none" }}
-      >
-        <defs>
-          <filter id={filterId}>
-            <feColorMatrix
-              in="SourceGraphic"
-              type="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -9"
-              result="goo"
-            />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
-
       <div
         className={cn("morph-text-container", textClassName)}
         style={{
           fontSize,
           fontWeight: 700,
-          filter: `url(#${filterId})`,
           fontFamily,
-          contain: "paint layout",
-          transform: "translateZ(0)",
-          willChange: "transform, opacity",
+          minHeight: "1.2em",
+          display: "flex",
+          alignItems: "center",
+          overflow: "hidden",
         }}
       >
-        <div
-          className="morph-word-rotator"
-          style={{
-            height: "1.2em",
-            minWidth: "14ch",
-            transform: "translateZ(0)",
-            willChange: "transform",
-          }}
-        >
-          {words.map((word, i) => (
-            <span
-              key={`${word}-${i}`}
-              className="morph-word"
-              style={{
-                top: "50%",
-                left: "0%",
-                transform: "translate3d(0, -50%, 0)",
-                opacity: 0,
-                whiteSpace: "nowrap",
-                animationName: "morph-word-rotate",
-                animationTimingFunction: "ease-in-out",
-                animationIterationCount: "infinite",
-                animationFillMode: "both",
-                willChange: "transform, opacity, filter",
-                backfaceVisibility: "hidden",
-                ...wordStyles[i],
-              }}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={words[index]}
+            initial={{ y: 28, opacity: 0, filter: "blur(4px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            exit={{ y: -28, opacity: 0, filter: "blur(4px)" }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              display: "inline-block",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {words[index]}
+          </motion.span>
+        </AnimatePresence>
       </div>
 
       {subtext && (
@@ -201,15 +164,13 @@ export function MorphText({
           style={{
             fontSize: "1.2rem",
             opacity: 0,
-            animation: "morph-fade-up 1s ease-out 1s forwards",
+            animation: "morph-fade-up 0.8s ease-out 0.4s forwards",
             fontFamily,
           }}
         >
           {subtext}
         </p>
       )}
-
-
     </div>
   );
 }

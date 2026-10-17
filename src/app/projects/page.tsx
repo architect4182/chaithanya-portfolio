@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import FloatingDock from "@/components/FloatingDock";
+import ProjectVideo from "@/components/ProjectVideo";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -148,7 +149,6 @@ export default function ProjectsPage() {
                   display: "flex",
                   flexDirection: "column",
                   transform: "translateZ(0)",
-                  willChange: "transform, opacity"
                 }}
               >
                 <div
@@ -159,34 +159,16 @@ export default function ProjectsPage() {
                     flexDirection: "column",
                     justifyContent: "flex-end",
                     transform: "translateZ(0)",
-                    willChange: "transform",
                     contain: "paint",
                   }}
                 >
                   <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
 
                   {project.video && (
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
+                    <ProjectVideo
+                      src={project.video}
                       poster={project.image}
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        zIndex: 0,
-                        transform: "translateZ(0)",
-                        willChange: "transform",
-                        contain: "paint",
-                      }}
-                    >
-                      <source src={project.video} type="video/mp4" />
-                    </video>
+                    />
                   )}
                   <div className="project-links desktop-links-only">
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", whiteSpace: "nowrap" }}>

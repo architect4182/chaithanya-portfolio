@@ -28,18 +28,7 @@ export default function AboutSection() {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
               style={{ fontSize: "1.25rem", color: "var(--text-white)", fontWeight: 500 }}
             >
-              Hello! <motion.span
-                animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  repeatDelay: 1
-                }}
-                style={{ display: "inline-block", transformOrigin: "70% 70%", transform: "translateZ(0)" }}
-              >
-                👋
-              </motion.span>
+              Hello! <span className="waving-hand">👋</span>
               <br />
               I'm Chaithanya Pedhagali — a Full Stack Developer and Data Analyst with 4+ years of experience building business intelligence solutions and enterprise applications.
             </motion.p>
@@ -105,7 +94,6 @@ export default function AboutSection() {
                   overflow: "hidden",
                   cursor: "pointer",
                   transform: "translateZ(0)",
-                  willChange: "transform",
                   transition: "border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease"
                 }}
               >
@@ -131,7 +119,6 @@ export default function AboutSection() {
                     height: "2px",
                     backgroundColor: "var(--accent-primary)",
                     transformOrigin: "left",
-                    willChange: "transform"
                   }}
                 />
               </motion.div>

@@ -190,7 +190,6 @@ export default function ExperienceSection() {
                   textDecoration: "none",
                   flexWrap: "wrap" as const,
                   transform: "translateZ(0)",
-                  willChange: "transform",
                 };
 
                 return cert.link ? (
@@ -235,7 +234,6 @@ export default function ExperienceSection() {
                   textDecoration: "none",
                   backgroundImage: "linear-gradient(to right, rgba(255, 45, 70, 0.08), rgba(255, 45, 70, 0))",
                   transform: "translateZ(0)",
-                  willChange: "transform",
                   transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease"
                 }}
                 whileHover={{ x: 5, backgroundColor: "rgba(38, 7, 13, 0.8)", borderColor: "var(--accent-primary)", boxShadow: "0 8px 30px rgba(255, 45, 70, 0.2)" }}

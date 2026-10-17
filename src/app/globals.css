@@ -64,15 +64,6 @@ html.lenis body {
     pointer-events: none;
 }
 
-/* Off-screen rendering containment for 90+ FPS scroll performance */
-#experience,
-#projects,
-#services,
-#contact {
-    content-visibility: auto;
-    contain-intrinsic-size: 800px;
-}
-
 /* Hide Scrollbar completely across all browsers while retaining smooth scroll */
 html,
 body {
@@ -813,7 +804,6 @@ body {
     cursor: pointer;
     outline: none;
     transform: translateZ(0);
-    will-change: transform;
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -949,55 +939,33 @@ body {
     }
 }
 
-.morph-word-rotator {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.morph-word {
-    position: absolute;
-}
-
 .morph-subtext {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--accent-primary);
     font-weight: 600;
 }
 
-@keyframes morph-word-rotate {
-    0% {
-        opacity: 0;
-        filter: blur(6px);
-        transform: translate3d(0, -50%, 0) scale(0.88);
+@keyframes wave-hand {
+    0%, 100% {
+        transform: rotate(0deg);
     }
+    20%, 60% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-8deg);
+    }
+    80% {
+        transform: rotate(10deg);
+    }
+}
 
-    6% {
-        opacity: 0.6;
-        filter: blur(3px);
-    }
-
-    16%,
-    35% {
-        opacity: 1;
-        filter: blur(0px);
-        transform: translate3d(0, -50%, 0) scale(1);
-    }
-
-    44% {
-        opacity: 0.6;
-        filter: blur(3px);
-    }
-
-    50%,
-    100% {
-        opacity: 0;
-        filter: blur(6px);
-        transform: translate3d(0, -50%, 0) scale(1.12);
-    }
+.waving-hand {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave-hand 2.5s ease-in-out infinite;
 }
 
 @keyframes morph-fade-up {

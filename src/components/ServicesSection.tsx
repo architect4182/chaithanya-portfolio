@@ -109,7 +109,6 @@ export default function ServicesSection() {
               transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease",
               cursor: "pointer",
               transform: "translateZ(0)",
-              willChange: "transform",
             }}
             whileHover={{
               y: -5,

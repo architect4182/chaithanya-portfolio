@@ -35,7 +35,6 @@ export default function FloatingDock() {
         bottom: "1.5rem",
         left: "50%",
         transform: "translateX(-50%) translateZ(0)",
-        willChange: "transform",
         zIndex: 1000,
         pointerEvents: isVisible ? "auto" : "none",
       }}
@@ -54,7 +53,6 @@ export default function FloatingDock() {
           border: "1px solid rgba(255, 50, 75, 0.25)",
           boxShadow: "0 8px 32px rgba(220, 20, 60, 0.28), inset 0 1px 1px rgba(255, 100, 120, 0.2)",
           transform: "translateZ(0)",
-          willChange: "transform, opacity",
         }}
         whileHover={{
           scale: 1.03,
@@ -79,7 +77,6 @@ export default function FloatingDock() {
               cursor: "pointer",
               padding: "0 0.85rem",
               transform: "translateZ(0)",
-              willChange: "transform",
             }}
             title={item.name}
           >
