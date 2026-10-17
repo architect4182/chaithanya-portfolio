@@ -19,23 +19,26 @@ export default function ExperienceSection() {
   return (
     <motion.section
       id="experience"
-      initial={{ y: 50, opacity: 0 }}
+      initial={{ y: 40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="section-container"
+      style={{ transform: "translateZ(0)" }}
     >
       <h2 className="section-title">Experience & Education</h2>
       <div className="experience-layout">
         {/* Left Column: Timeline */}
-        <div className="experience-timeline-container">
+        <div className="experience-timeline-container" style={{ transform: "translateZ(0)" }}>
           <motion.div
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-60px" }}
             variants={{
+              hidden: { opacity: 0 },
               show: {
-                transition: { staggerChildren: 0.3 }
+                opacity: 1,
+                transition: { staggerChildren: 0.18 }
               }
             }}
             className="experience-list"
@@ -58,7 +61,10 @@ export default function ExperienceSection() {
               },
               {
                 role: "B.Tech – Computer Science & Engineering",
-                company: "Presidency University, Bangalore",
+                company: "Presidency University",
+                client: "(Bangalore)",
+                logo: "/presidency-university.svg",
+                logoHeight: "24px",
                 year: "2018 - 2022",
                 desc: [
                   <>Graduated in Computer Science with a focus on software engineering and development.</>,
@@ -71,9 +77,14 @@ export default function ExperienceSection() {
                 key={i}
                 className="experience-item"
                 variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+                  hidden: { opacity: 0, x: -16 },
+                  show: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
+                  }
                 }}
+                style={{ transform: "translateZ(0)" }}
               >
                 <div className="timeline-dot"></div>
                 <div className="date-badge">{exp.year}</div>
@@ -86,7 +97,7 @@ export default function ExperienceSection() {
                       <img
                         src={exp.logo}
                         alt={exp.company}
-                        style={{ height: "18px", width: "auto", objectFit: "contain" }}
+                        style={{ height: (exp as any).logoHeight || "20px", width: "auto", objectFit: "contain" }}
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                           const fallback = e.currentTarget.nextElementSibling as HTMLElement;
@@ -98,20 +109,14 @@ export default function ExperienceSection() {
                   ) : (
                     <span>{exp.company}</span>
                   )}
-                  {exp.client && <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>{exp.client}</span>}
+                  {exp.client && <span style={{ color: "rgba(255, 220, 225, 0.7)", fontSize: "0.95rem" }}>{exp.client}</span>}
                 </p>
                 <div className="exp-desc">
                   <ul>
                     {exp.desc.map((item, idx) => (
-                      <motion.li
-                        key={idx}
-                        variants={{
-                          hidden: { opacity: 0, y: 10 },
-                          show: { opacity: 1, y: 0, transition: { delay: idx * 0.1 } }
-                        }}
-                      >
+                      <li key={idx}>
                         {item}
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -123,8 +128,9 @@ export default function ExperienceSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ marginTop: "4rem" }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{ marginTop: "4rem", transform: "translateZ(0)" }}
           >
             <h3 style={{ fontSize: "1.5rem", color: "var(--text-white)", marginBottom: "1.5rem", fontWeight: 600 }}>{"Certifications & Continuous Learning"}</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -150,7 +156,7 @@ export default function ExperienceSection() {
                       width: "48px",
                       height: "48px",
                       borderRadius: "50%",
-                      backgroundColor: "rgba(255,255,255,0.05)",
+                      backgroundColor: "rgba(255, 45, 70, 0.12)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -172,17 +178,19 @@ export default function ExperienceSection() {
                 );
 
                 const commonStyle = {
-                  backgroundColor: "rgba(255,255,255,0.02)",
-                  border: "1px solid rgba(255,255,255,0.05)",
+                  backgroundColor: "rgba(25, 4, 8, 0.6)",
+                  border: "1px solid rgba(255, 50, 75, 0.16)",
                   borderRadius: "12px",
                   padding: "1.5rem",
                   display: "flex",
                   alignItems: "center",
                   gap: "1.5rem",
-                  transition: "all 0.2s ease",
+                  transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
                   cursor: "pointer",
                   textDecoration: "none",
-                  flexWrap: "wrap" as const
+                  flexWrap: "wrap" as const,
+                  transform: "translateZ(0)",
+                  willChange: "transform",
                 };
 
                 return cert.link ? (
@@ -191,24 +199,18 @@ export default function ExperienceSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
                     style={commonStyle as any}
-                    whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)", x: 5 }}
+                    whileHover={{ x: 5, backgroundColor: "rgba(38, 7, 13, 0.8)", borderColor: "rgba(255, 50, 75, 0.45)", boxShadow: "0 6px 20px rgba(255, 45, 70, 0.15)" }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
                     {CardContent}
                   </motion.a>
                 ) : (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
                     style={commonStyle as any}
-                    whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)", x: 5 }}
+                    whileHover={{ x: 5, backgroundColor: "rgba(38, 7, 13, 0.8)", borderColor: "rgba(255, 50, 75, 0.45)", boxShadow: "0 6px 20px rgba(255, 45, 70, 0.15)" }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
                     {CardContent}
                   </motion.div>
@@ -220,31 +222,30 @@ export default function ExperienceSection() {
                 href="https://skillsoft.digitalbadges.skillsoft.com/profile/chaithanyapedhagali653656/wallet"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.02)",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  backgroundColor: "rgba(25, 4, 8, 0.6)",
+                  border: "1px solid rgba(255, 50, 75, 0.2)",
                   borderRadius: "12px",
                   padding: "1.5rem",
                   display: "flex",
                   alignItems: "center",
                   flexWrap: "wrap",
                   gap: "1.5rem",
-                  transition: "all 0.2s ease",
                   cursor: "pointer",
                   textDecoration: "none",
-                  backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0))"
+                  backgroundImage: "linear-gradient(to right, rgba(255, 45, 70, 0.08), rgba(255, 45, 70, 0))",
+                  transform: "translateZ(0)",
+                  willChange: "transform",
+                  transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease"
                 }}
-                whileHover={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "var(--accent-primary)", x: 5 }}
+                whileHover={{ x: 5, backgroundColor: "rgba(38, 7, 13, 0.8)", borderColor: "var(--accent-primary)", boxShadow: "0 8px 30px rgba(255, 45, 70, 0.2)" }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
                 <div style={{
                   width: "48px",
                   height: "48px",
                   borderRadius: "50%",
-                  backgroundColor: "rgba(255,255,255,0.05)",
+                  backgroundColor: "rgba(255, 45, 70, 0.12)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -268,12 +269,15 @@ export default function ExperienceSection() {
         </div>
 
         {/* Right Column: Stats Sidebar */}
-        <div className="experience-sidebar">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+        <motion.div
+          className="experience-sidebar"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+          style={{ transform: "translateZ(0)" }}
+        >
+          <div
             className="stat-card"
             style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
           >
@@ -281,8 +285,8 @@ export default function ExperienceSection() {
               width: "56px",
               height: "56px",
               borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.05)",
-              backgroundColor: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255, 50, 75, 0.25)",
+              backgroundColor: "rgba(255, 45, 70, 0.08)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -295,12 +299,9 @@ export default function ExperienceSection() {
               <span className="stat-number">4+</span>
               <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>Years of Experience</span>
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+          </div>
+
+          <div
             className="stat-card"
             style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
           >
@@ -308,8 +309,8 @@ export default function ExperienceSection() {
               width: "56px",
               height: "56px",
               borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.05)",
-              backgroundColor: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255, 50, 75, 0.25)",
+              backgroundColor: "rgba(255, 45, 70, 0.08)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -322,12 +323,9 @@ export default function ExperienceSection() {
               <span className="stat-number">15+</span>
               <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>REST APIs Developed</span>
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+          </div>
+
+          <div
             className="stat-card"
             style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
           >
@@ -335,8 +333,8 @@ export default function ExperienceSection() {
               width: "56px",
               height: "56px",
               borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.05)",
-              backgroundColor: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255, 50, 75, 0.25)",
+              backgroundColor: "rgba(255, 45, 70, 0.08)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -349,12 +347,9 @@ export default function ExperienceSection() {
               <span className="stat-number">30%</span>
               <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>Performance Improvement</span>
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
+          </div>
+
+          <div
             className="stat-card"
             style={{ flexDirection: "row", alignItems: "center", gap: "1.5rem" }}
           >
@@ -362,8 +357,8 @@ export default function ExperienceSection() {
               width: "56px",
               height: "56px",
               borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.05)",
-              backgroundColor: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255, 50, 75, 0.25)",
+              backgroundColor: "rgba(255, 45, 70, 0.08)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -376,52 +371,31 @@ export default function ExperienceSection() {
               <span className="stat-number">20%</span>
               <span className="stat-label" style={{ textTransform: "uppercase", fontSize: "0.85rem", letterSpacing: "1px", marginTop: "0.2rem" }}>Faster DB Queries</span>
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="stat-card"
-          >
+          </div>
+
+          <div className="stat-card">
             <span className="stat-label" style={{ marginBottom: "0.5rem" }}>Core Technologies</span>
             <div className="tech-grid">
-              {["Java", "Spring Boot", "React", "Angular", "Python", "SQL", "Power BI", "AWS", "Git"].map((tech, i) => (
-                <motion.span
-                  key={tech}
-                  className="tech-tag"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + (i * 0.05) }}
-                >
+              {["Java", "Spring Boot", "React", "Angular", "Python", "SQL", "Power BI", "AWS", "Git"].map((tech) => (
+                <span key={tech} className="tech-tag">
                   {tech}
-                </motion.span>
+                </span>
               ))}
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.7 }}
-            className="stat-card"
-          >
+          </div>
+
+          <div className="stat-card">
             <span className="stat-label" style={{ marginBottom: "1rem", display: "block" }}>AI & Design Ecosystem</span>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
-              {aiTools.map((tool, i) => (
-                <motion.div
+              {aiTools.map((tool) => (
+                <div
                   key={tool.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 + (i * 0.05) }}
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: "0.5rem",
-                    backgroundColor: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.05)",
+                    backgroundColor: "rgba(25, 4, 8, 0.6)",
+                    border: "1px solid rgba(255, 50, 75, 0.18)",
                     padding: "0.4rem 0.8rem",
                     borderRadius: "8px",
                   }}
@@ -454,11 +428,11 @@ export default function ExperienceSection() {
                   <span style={{ color: "var(--text-white)", fontSize: "0.85rem", fontWeight: 500 }}>
                     {tool.name}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );

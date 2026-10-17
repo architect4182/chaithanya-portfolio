@@ -24,7 +24,6 @@ export default function HeroSection() {
 
   return (
     <div className="hero-wrapper">
-      <div className="hero-image-bg" style={{ backgroundImage: "url('/profile-hero.jpg')" }}></div>
       <div className="hero-content-layer">
         <Navbar />
 
@@ -157,11 +156,19 @@ export function MorphText({
           fontWeight: 700,
           filter: `url(#${filterId})`,
           fontFamily,
+          contain: "paint layout",
+          transform: "translateZ(0)",
+          willChange: "transform, opacity",
         }}
       >
         <div
           className="morph-word-rotator"
-          style={{ height: "1.2em", minWidth: "14ch" }}
+          style={{
+            height: "1.2em",
+            minWidth: "14ch",
+            transform: "translateZ(0)",
+            willChange: "transform",
+          }}
         >
           {words.map((word, i) => (
             <span
@@ -170,13 +177,15 @@ export function MorphText({
               style={{
                 top: "50%",
                 left: "0%",
-                transform: "translate(0, -50%)",
+                transform: "translate3d(0, -50%, 0)",
                 opacity: 0,
                 whiteSpace: "nowrap",
                 animationName: "morph-word-rotate",
                 animationTimingFunction: "ease-in-out",
                 animationIterationCount: "infinite",
                 animationFillMode: "both",
+                willChange: "transform, opacity, filter",
+                backfaceVisibility: "hidden",
                 ...wordStyles[i],
               }}
             >

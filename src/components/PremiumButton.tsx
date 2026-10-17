@@ -36,6 +36,7 @@ export default function PremiumButton({ href, onClick, children, className = "",
           marginLeft: "12px",
           position: "relative",
           zIndex: 2,
+          boxShadow: "0 0 15px rgba(255, 45, 70, 0.5)",
         }}
       >
         <svg
@@ -43,7 +44,7 @@ export default function PremiumButton({ href, onClick, children, className = "",
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#000000"
+          stroke="#ffffff"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"

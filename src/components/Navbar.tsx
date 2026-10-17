@@ -15,7 +15,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="navbar"
     >
-      <div className="logo">Chaithanya Pedhagali.</div>
+      <div className="logo">Chaithanya Pedhagali<span style={{ color: "var(--accent-primary)" }}>.</span></div>
       <nav className="nav-links">
         <Link href="/" className={pathname === "/" ? "active" : ""}>
           Home

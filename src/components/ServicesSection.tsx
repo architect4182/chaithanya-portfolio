@@ -7,7 +7,7 @@ export default function ServicesSection() {
   const services = [
     {
       title: "Full Stack",
-      description: "Robust architectures and interactive interfaces.",
+      description: "Engineering end-to-end applications with Java, Spring Boot, React, Next.js, and TypeScript.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -18,7 +18,7 @@ export default function ServicesSection() {
     },
     {
       title: "API & Microservices",
-      description: "Scalable APIs and secure microservices.",
+      description: "Architecting scalable REST & SOAP services with Spring Security, JWT, and RBAC authorization.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="3"></circle>
@@ -28,7 +28,7 @@ export default function ServicesSection() {
     },
     {
       title: "Data Analytics",
-      description: "Transforming data into actionable insights.",
+      description: "Building interactive Power BI dashboards, advanced SQL queries, and Python data pipelines.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -39,7 +39,7 @@ export default function ServicesSection() {
     },
     {
       title: "Database Opt",
-      description: "Performance tuning and query optimization.",
+      description: "Optimizing Oracle & SQL Server queries, index tuning, and accelerating data retrieval.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
@@ -50,7 +50,7 @@ export default function ServicesSection() {
     },
     {
       title: "App Dev",
-      description: "Cross-platform mobile and web applications.",
+      description: "Crafting modular Angular & React applications with lazy loading and high-performance routing.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
@@ -60,7 +60,7 @@ export default function ServicesSection() {
     },
     {
       title: "UI/UX Design",
-      description: "Intuitive and stunning human-centered interfaces.",
+      description: "Designing interactive Figma prototypes, accessible design systems, and fluid Framer animations.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
@@ -75,11 +75,12 @@ export default function ServicesSection() {
   return (
     <motion.section
       id="services"
-      initial={{ y: 50, opacity: 0 }}
+      initial={{ y: 40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="section-container"
+      style={{ transform: "translateZ(0)" }}
     >
       <div style={{ marginBottom: "3rem" }}>
         <h2 className="section-title" style={{ marginBottom: "0.5rem" }}>What I Do</h2>
@@ -88,54 +89,51 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(6, minmax(260px, 1fr))",
-        gap: "1.2rem",
-        width: "100%",
-        overflowX: "auto",
-        paddingBottom: "1.5rem",
-        WebkitOverflowScrolling: "touch"
-      }}>
+      <div className="services-grid" style={{ transform: "translateZ(0)" }}>
         {services.map((service, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 * i, duration: 0.5 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ delay: 0.06 * i, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              backgroundColor: "#050505",
-              border: "1px solid rgba(255, 255, 255, 0.05)",
-              borderRadius: "4px",
-              padding: "2rem 1.5rem",
+              backgroundColor: "rgba(25, 4, 8, 0.7)",
+              border: "1px solid rgba(255, 50, 75, 0.16)",
+              borderRadius: "12px",
+              padding: "1.75rem 1.15rem",
               display: "flex",
               flexDirection: "column",
-              gap: "1.5rem",
-              transition: "border-color 0.3s ease, background-color 0.3s ease",
+              gap: "1.25rem",
+              height: "100%",
+              transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease",
               cursor: "pointer",
+              transform: "translateZ(0)",
+              willChange: "transform",
             }}
             whileHover={{
-              backgroundColor: "#0a0a0a",
-              borderColor: "rgba(255, 255, 255, 0.2)",
+              y: -5,
+              backgroundColor: "rgba(38, 7, 13, 0.9)",
+              borderColor: "rgba(255, 50, 75, 0.45)",
+              boxShadow: "0 8px 30px rgba(255, 40, 70, 0.2)",
             }}
           >
-            <div style={{ color: "var(--text-white)", display: "flex", alignItems: "flex-start", opacity: 0.7 }}>
+            <div style={{ color: "var(--accent-primary)", display: "flex", alignItems: "flex-start", opacity: 0.9 }}>
               {service.icon}
             </div>
-            <div style={{ marginTop: "0.5rem" }}>
+            <div style={{ marginTop: "0.25rem" }}>
               <h3 style={{ 
                 color: "var(--text-white)", 
-                fontSize: "1.1rem", 
+                fontSize: "1rem", 
                 fontWeight: 800, 
                 textTransform: "uppercase", 
-                letterSpacing: "0.5px", 
-                marginBottom: "0.8rem",
-                lineHeight: 1.2
+                letterSpacing: "0.4px", 
+                marginBottom: "0.6rem",
+                lineHeight: 1.25
               }}>
                 {service.title}
               </h3>
-              <p style={{ color: "#888", fontSize: "0.85rem", lineHeight: 1.5 }}>
+              <p style={{ color: "var(--text-muted)", fontSize: "0.82rem", lineHeight: 1.45 }}>
                 {service.description}
               </p>
             </div>

@@ -113,14 +113,14 @@ export default function ProjectsPage() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "3rem", flexWrap: "wrap", gap: "2rem" }}>
           <div>
-            <h1 style={{ fontSize: "5rem", fontWeight: 700, marginBottom: "1.5rem" }}>Projects</h1>
+            <h1 style={{ fontSize: "5rem", fontWeight: 700, marginBottom: "1.5rem", background: "linear-gradient(180deg, #ffffff 40%, #ffa8b8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Projects</h1>
             <p style={{ color: "var(--text-muted)", fontSize: "1.2rem", maxWidth: "450px", lineHeight: "1.6" }}>
               Building products that combine engineering,<br />design and analytics.
             </p>
           </div>
         </div>
 
-        <div style={{ height: "1px", background: "rgba(255,255,255,0.1)", marginBottom: "3rem", width: "100%" }}></div>
+        <div style={{ height: "1px", background: "rgba(255, 50, 75, 0.2)", marginBottom: "3rem", width: "100%" }}></div>
 
         <div className="filter-nav">
           {filters.map(f => (
@@ -140,12 +140,16 @@ export default function ProjectsPage() {
               <motion.div
                 key={project.title}
                 className="project-wrapper"
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                style={{ display: "flex", flexDirection: "column" }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  transform: "translateZ(0)",
+                  willChange: "transform, opacity"
+                }}
               >
                 <div
                   className="project-card"
@@ -153,7 +157,10 @@ export default function ProjectsPage() {
                     position: "relative",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "flex-end"
+                    justifyContent: "flex-end",
+                    transform: "translateZ(0)",
+                    willChange: "transform",
+                    contain: "paint",
                   }}
                 >
                   <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
@@ -165,7 +172,18 @@ export default function ProjectsPage() {
                       muted
                       playsInline
                       poster={project.image}
-                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        zIndex: 0,
+                        transform: "translateZ(0)",
+                        willChange: "transform",
+                        contain: "paint",
+                      }}
                     >
                       <source src={project.video} type="video/mp4" />
                     </video>
@@ -174,7 +192,7 @@ export default function ProjectsPage() {
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", whiteSpace: "nowrap" }}>
                       Live Demo
                     </a>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", background: "rgba(255,255,255,0.1)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)", whiteSpace: "nowrap" }}>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", background: "rgba(255, 45, 70, 0.15)", color: "#fff", border: "1px solid rgba(255, 50, 75, 0.35)", whiteSpace: "nowrap" }}>
                       GitHub
                     </a>
                   </div>
@@ -192,7 +210,7 @@ export default function ProjectsPage() {
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", whiteSpace: "nowrap" }}>
                     Live Demo
                   </a>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", background: "rgba(255,255,255,0.1)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)", whiteSpace: "nowrap" }}>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.5rem", background: "rgba(255, 45, 70, 0.15)", color: "#fff", border: "1px solid rgba(255, 50, 75, 0.35)", whiteSpace: "nowrap" }}>
                     GitHub
                   </a>
                 </div>

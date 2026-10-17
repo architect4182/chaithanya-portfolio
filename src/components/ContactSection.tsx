@@ -7,11 +7,12 @@ export default function ContactSection() {
   return (
       <motion.section
         id="contact"
-        initial={{ y: 50, opacity: 0 }}
+        initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="contact-section section-container"
+        style={{ transform: "translateZ(0)" }}
       >
         <div style={{ display: "flex", flexWrap: "wrap", gap: "4rem", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ flex: "1 1 400px" }}>

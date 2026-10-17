@@ -7,11 +7,12 @@ export default function AboutSection() {
     <>
       <motion.section
         id="about"
-        initial={{ y: 50, opacity: 0 }}
+        initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="section-container"
+        style={{ transform: "translateZ(0)" }}
       >
         <div className="about-header">
           <span style={{ color: "var(--accent-primary)", fontWeight: 600, fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "1px" }}>About Me</span>
@@ -21,10 +22,10 @@ export default function AboutSection() {
         <div style={{ display: "flex", gap: "3rem", alignItems: "stretch", flexWrap: "wrap" }}>
           <div style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: "1.5rem", color: "var(--text-muted)", fontSize: "1.1rem" }}>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
               style={{ fontSize: "1.25rem", color: "var(--text-white)", fontWeight: 500 }}
             >
               Hello! <motion.span
@@ -35,7 +36,7 @@ export default function AboutSection() {
                   ease: "easeInOut",
                   repeatDelay: 1
                 }}
-                style={{ display: "inline-block", transformOrigin: "70% 70%" }}
+                style={{ display: "inline-block", transformOrigin: "70% 70%", transform: "translateZ(0)" }}
               >
                 👋
               </motion.span>
@@ -43,24 +44,24 @@ export default function AboutSection() {
               I'm Chaithanya Pedhagali — a Full Stack Developer and Data Analyst with 4+ years of experience building business intelligence solutions and enterprise applications.
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
-              I specialize in transforming complex datasets into meaningful insights using <strong style={{ color: "var(--text-white)", fontWeight: 600 }}>Power BI, SQL, and Python</strong>, while leveraging <strong style={{ color: "var(--text-white)", fontWeight: 600 }}>Java, Spring Boot, and React</strong> to develop scalable software solutions.
+              I specialize in transforming complex datasets into meaningful insights using <strong style={{ color: "var(--accent-primary)", fontWeight: 600 }}>Power BI, SQL, and Python</strong>, while leveraging <strong style={{ color: "var(--accent-primary)", fontWeight: 600 }}>Java, Spring Boot, and React</strong> to develop scalable software solutions.
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             >
               My experience bridges analytics and software engineering, allowing me to approach problems strategically and create impactful digital experiences that deliver measurable business value. I enjoy collaborating with cross-functional teams to translate business requirements into intuitive, data-driven solutions that improve efficiency and support informed decision-making. I'm passionate about continuous learning, solving complex challenges, and building products that create long-term value for both users and organizations.
             </motion.p>
           </div>
 
-          <div style={{ width: "1px", backgroundColor: "rgba(255,255,255,0.1)", flexShrink: 0, display: "block" }} className="about-divider"></div>
+          <div style={{ width: "1px", backgroundColor: "rgba(255, 50, 75, 0.2)", flexShrink: 0, display: "block" }} className="about-divider"></div>
 
           <div className="about-cards-container" style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: "1rem" }}>
             {[
@@ -88,12 +89,13 @@ export default function AboutSection() {
                 viewport={{ once: true }}
                 variants={{
                   initial: { opacity: 0, x: 20 },
-                  visible: { opacity: 1, x: 0, transition: { delay: 0.3 + i * 0.1 } },
-                  hover: { y: -6, borderColor: "rgba(255,255,255,0.2)", boxShadow: "0 8px 32px rgba(0,0,0,0.3)", backgroundColor: "rgba(255,255,255,0.05)" }
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 + i * 0.1 } },
+                  hover: { y: -6 }
                 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.05)",
+                  backgroundColor: "rgba(25, 4, 8, 0.6)",
+                  border: "1px solid rgba(255, 50, 75, 0.16)",
                   padding: "1.8rem",
                   borderRadius: "16px",
                   display: "flex",
@@ -101,12 +103,15 @@ export default function AboutSection() {
                   alignItems: "flex-start",
                   position: "relative",
                   overflow: "hidden",
-                  cursor: "pointer"
+                  cursor: "pointer",
+                  transform: "translateZ(0)",
+                  willChange: "transform",
+                  transition: "border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease"
                 }}
               >
                 <motion.div
                   variants={{ hover: { scale: 1.1, rotate: 5 } }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 20 }}
                   style={{ marginTop: "0.1rem" }}
                 >
                   {card.icon}
@@ -116,8 +121,18 @@ export default function AboutSection() {
                   <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.6 }}>{card.desc}</p>
                 </div>
                 <motion.div
-                  variants={{ initial: { width: "0%" }, hover: { width: "100%" } }}
-                  style={{ position: "absolute", bottom: 0, left: 0, height: "2px", backgroundColor: "var(--accent-primary)" }}
+                  variants={{ initial: { scaleX: 0 }, hover: { scaleX: 1 } }}
+                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: "2px",
+                    backgroundColor: "var(--accent-primary)",
+                    transformOrigin: "left",
+                    willChange: "transform"
+                  }}
                 />
               </motion.div>
             ))}
@@ -126,7 +141,7 @@ export default function AboutSection() {
       </motion.section>
 
       {/* Section Divider */}
-      <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)", margin: "0 0 6rem 0" }} />
+      <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(255, 50, 75, 0.3), transparent)", margin: "0 0 6rem 0" }} />
     </>
   );
 }
