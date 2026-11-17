@@ -165,7 +165,7 @@ export default function ExperienceSection() {
                       overflow: "hidden"
                     }}>
                       {cert.logo ? (
-                        <img src={cert.logo} alt={cert.issuer} style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
+                        <img src={cert.logo} alt={cert.issuer} loading="lazy" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
                       ) : (
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89L17 22l-5-3l-5 3l1.523-9.11"></path></svg>
                       )}
@@ -251,7 +251,7 @@ export default function ExperienceSection() {
                   flexShrink: 0,
                   overflow: "hidden"
                 }}>
-                  <img src="https://www.google.com/s2/favicons?domain=skillsoft.com&sz=128" alt="Skillsoft Wallet" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
+                  <img src="https://www.google.com/s2/favicons?domain=skillsoft.com&sz=128" alt="Skillsoft Wallet" loading="lazy" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: "1 1 200px" }}>
                   <h4 style={{ color: "var(--text-white)", fontSize: "1.2rem", margin: 0, fontWeight: 600 }}>Verified Digital Badge Wallet</h4>
@@ -405,6 +405,7 @@ export default function ExperienceSection() {
                         alt={`${tool.name} logo`}
                         width={18}
                         height={18}
+                        loading="lazy"
                         style={{ display: "block" }}
                       />
                     ) : tool.customImg ? (

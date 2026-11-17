@@ -1,17 +1,5 @@
 [
   {
-    "name": "aegis-protocol",
-    "title": "Aegis Protocol",
-    "description": "Decentralized Security & Risk Protocol concept platform.",
-    "html_url": "https://github.com/architect4182/aegis-protocol",
-    "homepage": "https://aegis-protocol-omega.vercel.app",
-    "language": "JavaScript",
-    "visibility": "public",
-    "private": false,
-    "fork": false,
-    "topics": []
-  },
-  {
     "name": "apple-travel-os",
     "title": "Apple Travel OS",
     "description": "A next-generation travel operating system concept inspired by the Apple ecosystem, unifying trip discovery, planning, navigation, and travel memories into one seamless experience.",
@@ -29,18 +17,6 @@
     "description": "A concept-driven Apple-inspired digital universe connecting products, interfaces, and immersive experiences.",
     "html_url": "https://github.com/architect4182/apple-universe",
     "homepage": "https://apple-universe-beryl.vercel.app/",
-    "language": "TypeScript",
-    "visibility": "public",
-    "private": false,
-    "fork": false,
-    "topics": []
-  },
-  {
-    "name": "atmos-verse",
-    "title": "AtmosVerse",
-    "description": "AtmosVerse is a modern entertainment discovery platform for exploring movies, TV shows, anime, franchises, and streaming networks through a cinematic user experience.",
-    "html_url": "https://github.com/architect4182/atmos-verse",
-    "homepage": "https://atmos-verse.vercel.app",
     "language": "TypeScript",
     "visibility": "public",
     "private": false,

@@ -98,26 +98,6 @@ export const allProjects: Project[] = [
     featured: false
   },
   {
-    title: "Aegis Protocol",
-    category: "Decentralized Security & Risk Protocol",
-    filterCategories: ["Products", "UI/UX", "Data Analytics"],
-    image: "/projects/aegis-protocol.jpg",
-    link: "https://aegis-protocol-omega.vercel.app",
-    github: "https://github.com/architect4182/aegis-protocol",
-    techStack: "Next.js • JavaScript • Web3",
-    featured: false
-  },
-  {
-    title: "AtmosVerse",
-    category: "Cinematic Entertainment Discovery Platform",
-    filterCategories: ["UI/UX", "Products"],
-    image: "/projects/atmos.jpg",
-    link: "https://atmos-verse.vercel.app",
-    github: "https://github.com/architect4182/atmos-verse",
-    techStack: "TypeScript • Next.js • Tailwind CSS",
-    featured: false
-  },
-  {
     title: "MaisonVell",
     category: "Luxury Fashion & 3D Interactive Runway",
     filterCategories: ["UI/UX", "Motion Design", "Products"],
@@ -140,7 +120,7 @@ export const allProjects: Project[] = [
   {
     title: "MyWealth",
     category: "Real-Time Wealth & Investment Portfolio Dashboard",
-    filterCategories: ["Data Analytics", "Products"],
+    filterCategories: ["RealTime"],
     image: "/projects/mywealth.png",
     link: "https://my-wealth-phi.vercel.app",
     github: "https://github.com/architect4182/MyWealth",

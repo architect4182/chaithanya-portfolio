@@ -54,7 +54,7 @@ export default function ProjectVideo({ src, poster, style, className }: ProjectV
       loop
       muted
       playsInline
-      preload="metadata"
+      preload="none"
       poster={poster}
       className={className}
       style={{

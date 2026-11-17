@@ -16,7 +16,7 @@ export default function ProjectsPage() {
     ? allProjects
     : allProjects.filter(p => p.filterCategories.includes(filter));
 
-  const filters = ["All", "Data Analytics", "UI/UX", "Motion Design", "Products", "API Keys"];
+  const filters = ["All", "RealTime", "Data Analytics", "UI/UX", "Motion Design", "Products", "API Keys"];
 
   return (
     <>
