@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0c" />
+      <stop offset="50%" stop-color="#141419" />
+      <stop offset="100%" stop-color="#070709" />
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#e2c992" stop-opacity="0.22" />
+      <stop offset="60%" stop-color="#9a7b38" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2c992" stop-opacity="0" />
+      <stop offset="50%" stop-color="#f5e5be" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#e2c992" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect width="1200" height="675" fill="url(#goldGlow)" />
+  <!-- Runway architectural grid -->
+  <g stroke="rgba(226, 201, 146, 0.12)" stroke-width="1">
+    <line x1="300" y1="0" x2="480" y2="675" />
+    <line x1="900" y1="0" x2="720" y2="675" />
+    <line x1="450" y1="0" x2="540" y2="675" />
+    <line x1="750" y1="0" x2="660" y2="675" />
+    <line x1="0" y1="520" x2="1200" y2="520" opacity="0.3" />
+    <line x1="0" y1="580" x2="1200" y2="580" opacity="0.5" />
+  </g>
+  <!-- Card center aesthetic -->
+  <circle cx="600" cy="270" r="140" fill="none" stroke="rgba(245, 229, 190, 0.2)" stroke-width="1.5" stroke-dasharray="4 6" />
+  <circle cx="600" cy="270" r="110" fill="none" stroke="rgba(245, 229, 190, 0.4)" stroke-width="1" />
+  <text x="600" y="280" font-family="'Cinzel', 'Playfair Display', serif, Georgia" font-size="44" font-weight="700" fill="#f5e5be" text-anchor="middle" letter-spacing="14">MAISON VELL</text>
+  <line x1="420" y1="320" x2="780" y2="320" stroke="url(#goldLine)" stroke-width="1.5" />
+  <text x="600" y="355" font-family="'Inter', -apple-system, sans-serif" font-size="14" font-weight="500" fill="#a39a88" text-anchor="middle" letter-spacing="8">HAUTE COUTURE • 3D RUNWAY ARCHIVE</text>
+</svg>

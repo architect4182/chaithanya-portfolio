@@ -3,29 +3,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import ProjectVideo from "./ProjectVideo";
+import { displayedProjects } from "@/data/projects";
 
 export default function ProjectsSection() {
-  const displayedProjects = [
-    {
-      title: "Apple Universe",
-      category: "Next-Gen Apple Universe OS",
-      filterCategories: ["UI/UX", "Products", "Motion Design"],
-      video: "https://res.cloudinary.com/difofj393/video/upload/apple-universe_qs2fza.mp4",
-      image: "/projects/apple-universe.png",
-      link: "https://chay-apple-universe.vercel.app",
-      github: "https://github.com/architect4182/apple-universe",
-      techStack: "React • TypeScript • UI/UX • Motion Design"
-    },
-    {
-      title: "Bowlz",
-      category: "An E-commerce for smoothie bowls",
-      video: "https://res.cloudinary.com/difofj393/video/upload/bowlz_h2y1dj.mp4",
-      image: "/projects/bowlz.jpg",
-      link: "https://bowlz.vercel.app",
-      github: "https://github.com/architect4182/bowlz",
-      techStack: "Next.js • TypeScript"
-    },
-  ];
 
   return (
     <motion.section
