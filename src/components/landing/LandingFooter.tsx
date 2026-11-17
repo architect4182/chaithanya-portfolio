@@ -23,8 +23,8 @@ export default function LandingFooter() {
   }, []);
 
   return (
-    <footer className="border-t border-[var(--border-color)] bg-[var(--bg-surface)] py-12 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="w-full border-t border-[var(--border-color)] bg-[var(--bg-surface)] py-12 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Identity & Status */}
         <div className="flex flex-col items-center md:items-start gap-1">
           <div className="flex items-center gap-2">

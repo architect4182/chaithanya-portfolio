@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable}`} data-theme="dark" suppressHydrationWarning>
-      <body className="antialiased min-h-screen">
+      <body className="antialiased min-h-screen w-full flex flex-col items-center">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

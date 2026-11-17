@@ -56,17 +56,20 @@ export default function TaglineReveal() {
   return (
     <section
       ref={containerRef}
-      className="py-24 md:py-36 px-4 max-w-6xl mx-auto flex flex-col items-center justify-center text-center"
+      className="w-full py-24 md:py-36 px-4 flex flex-col items-center justify-center text-center"
     >
-      <div className="max-w-[680px] mx-auto">
-        <p className="caption-3 uppercase tracking-wider text-[var(--text-muted)] mb-6">
+      <div className="max-w-[680px] mx-auto w-full">
+        <span className="caption-3 uppercase tracking-wider text-[var(--text-muted)] block mb-6 font-mono-numbers">
           The Engineering Philosophy
-        </p>
+        </span>
         <h2 className="heading-3 leading-snug">
           {words.map((word, index) => {
             if (prefersReducedMotion) {
               return (
-                <span key={index} className="text-[var(--text-primary)] mr-2 inline-block">
+                <span
+                  key={index}
+                  className="text-[var(--text-primary)] inline-block mr-[0.35em]"
+                >
                   {word}
                 </span>
               );
@@ -79,11 +82,12 @@ export default function TaglineReveal() {
             return (
               <span
                 key={index}
-                className="mr-2 inline-block"
+                className="inline-block mr-[0.35em]"
                 style={{
                   color: isWordActive ? "var(--text-primary)" : "var(--text-muted)",
-                  opacity: isWordActive ? 1 : 0.28,
-                  transition: "color 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms cubic-bezier(0.22, 1, 0.36, 1)",
+                  opacity: isWordActive ? 1 : 0.25,
+                  transition:
+                    "color 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms cubic-bezier(0.22, 1, 0.36, 1)",
                 }}
               >
                 {word}

@@ -20,19 +20,20 @@ export default function HeaderNav() {
 
   return (
     <>
-      <header className="fixed top-4 left-0 right-0 z-50 px-4 pointer-events-none flex justify-center">
+      <header className="fixed top-5 left-0 right-0 z-50 px-4 pointer-events-none flex justify-center w-full">
         <nav
           aria-label="Primary navigation"
-          className="pointer-events-auto flex items-center justify-between gap-6 px-4 py-2 rounded-full border border-[var(--nav-border)] shadow-sm backdrop-blur-md"
+          className="pointer-events-auto flex items-center justify-between gap-5 sm:gap-7 px-4 py-2 rounded-full border border-[var(--nav-border)] shadow-md backdrop-blur-md"
           style={{
             backgroundColor: "var(--nav-bg)",
-            transition: "background-color 300ms cubic-bezier(0.22, 1, 0.36, 1), border-color 300ms cubic-bezier(0.22, 1, 0.36, 1)",
+            transition:
+              "background-color 300ms cubic-bezier(0.22, 1, 0.36, 1), border-color 300ms cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
           {/* Logo / Monogram */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm font-semibold tracking-tight text-[var(--text-primary)] hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 text-sm font-semibold tracking-tight text-[var(--text-primary)] hover:opacity-85 transition-opacity"
             style={{ textDecoration: "none" }}
           >
             <span
@@ -44,11 +45,11 @@ export default function HeaderNav() {
             >
               C
             </span>
-            <span className="hidden sm:inline">Chaithanya</span>
+            <span className="hidden sm:inline font-medium">Chaithanya</span>
           </Link>
 
           {/* Desktop Nav Items */}
-          <div className="hidden md:flex items-center gap-5">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -62,17 +63,26 @@ export default function HeaderNav() {
           </div>
 
           {/* Actions: Theme Toggle & Primary CTA */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             {/* System / Dark / Light Toggle */}
             <button
               type="button"
               onClick={toggleTheme}
               aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
-              className="w-8 h-8 rounded-full flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)] bg-[var(--bg-card)] transition-colors duration-300"
+              className="w-8 h-8 rounded-full flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)] bg-[var(--bg-card-subtle)] transition-colors duration-300 cursor-pointer"
             >
               {resolvedTheme === "dark" ? (
-                /* Solar / Phosphor Sun Icon */
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                /* Sun Icon */
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <circle cx="12" cy="12" r="5" />
                   <line x1="12" y1="1" x2="12" y2="3" />
                   <line x1="12" y1="21" x2="12" y2="23" />
@@ -84,8 +94,17 @@ export default function HeaderNav() {
                   <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
               ) : (
-                /* Solar / Phosphor Moon Icon */
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                /* Moon Icon */
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                 </svg>
               )}
@@ -108,9 +127,18 @@ export default function HeaderNav() {
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle navigation menu"
-              className="md:hidden w-8 h-8 rounded-full flex items-center justify-center text-[var(--text-primary)] border border-[var(--border-color)] bg-[var(--bg-card)]"
+              className="md:hidden w-8 h-8 rounded-full flex items-center justify-center text-[var(--text-primary)] border border-[var(--border-color)] bg-[var(--bg-card-subtle)] cursor-pointer"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 {mobileOpen ? (
                   <>
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -129,7 +157,7 @@ export default function HeaderNav() {
         </nav>
       </header>
 
-      {/* Full-height Mobile Menu Panel (B7) */}
+      {/* Full-height Mobile Menu Panel */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -140,7 +168,7 @@ export default function HeaderNav() {
             className="fixed inset-0 z-40 md:hidden flex flex-col justify-center px-8 backdrop-blur-xl"
             style={{ backgroundColor: "var(--bg-surface)" }}
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 max-w-sm mx-auto w-full">
               {navLinks.map((link, idx) => (
                 <motion.a
                   key={link.label}
@@ -162,7 +190,11 @@ export default function HeaderNav() {
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: navLinks.length * 0.06, ease: baseEase }}
+                transition={{
+                  duration: 0.4,
+                  delay: navLinks.length * 0.06,
+                  ease: baseEase,
+                }}
                 className="pt-6 border-t border-[var(--border-color)]"
               >
                 <a

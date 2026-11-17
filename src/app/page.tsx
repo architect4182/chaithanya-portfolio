@@ -66,7 +66,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeaderNav />
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content" className="w-full min-h-screen flex flex-col items-center">
         <HeroSection />
         <TaglineReveal />
         <SelectedWork />

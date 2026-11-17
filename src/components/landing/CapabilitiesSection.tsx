@@ -48,48 +48,50 @@ export default function CapabilitiesSection() {
   ];
 
   return (
-    <section id="capabilities" className="py-20 px-4 max-w-6xl mx-auto">
-      <div className="mb-12 pb-6 border-b border-[var(--border-color)]">
-        <span className="caption-3 uppercase tracking-wider text-[var(--text-muted)] block mb-2">
-          Engineering Value
-        </span>
-        <h2 className="heading-3 text-[var(--text-primary)]">
-          Core Capabilities Brought to Engineering Teams
-        </h2>
-      </div>
+    <section id="capabilities" className="w-full py-20 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="mb-12 pb-6 border-b border-[var(--border-color)]">
+          <span className="caption-3 uppercase tracking-wider text-[var(--text-muted)] block mb-2 font-mono-numbers">
+            Engineering Value
+          </span>
+          <h2 className="heading-3 text-[var(--text-primary)]">
+            Core Capabilities Brought to Engineering Teams
+          </h2>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {capabilities.map((item, index) => (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: baseEase }}
-            className="rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] p-6 flex flex-col justify-between hover:border-[var(--border-strong)] transition-colors duration-300"
-          >
-            <div>
-              <span className="caption-4 font-mono-numbers text-[var(--text-muted)] mb-3 block">
-                0{index + 1}
-              </span>
-              <h3 className="heading-5 text-[var(--text-primary)] mb-3">
-                {item.title}
-              </h3>
-              <p className="body-4 text-[var(--text-secondary)] mb-6">
-                {item.description}
-              </p>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {capabilities.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: baseEase }}
+              className="rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] p-6 sm:p-7 flex flex-col justify-between hover:border-[var(--border-strong)] transition-all duration-300 shadow-md"
+            >
+              <div>
+                <span className="caption-4 font-mono-numbers text-[var(--text-muted)] mb-3 block">
+                  0{index + 1}
+                </span>
+                <h3 className="heading-5 text-[var(--text-primary)] mb-3">
+                  {item.title}
+                </h3>
+                <p className="body-4 text-[var(--text-secondary)] mb-6 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
 
-            <ul className="space-y-2 pt-4 border-t border-[var(--border-color)] list-none">
-              {item.points.map((pt, pIdx) => (
-                <li key={pIdx} className="caption-2 text-[var(--text-secondary)] flex items-start gap-2">
-                  <span className="text-emerald-500 mt-1 select-none">✓</span>
-                  <span>{pt}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+              <ul className="space-y-2 pt-4 border-t border-[var(--border-color)] list-none">
+                {item.points.map((pt, pIdx) => (
+                  <li key={pIdx} className="caption-2 text-[var(--text-secondary)] flex items-start gap-2">
+                    <span className="text-emerald-500 mt-0.5 select-none font-bold">✓</span>
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

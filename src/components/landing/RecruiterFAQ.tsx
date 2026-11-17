@@ -43,60 +43,62 @@ export default function RecruiterFAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 px-4 max-w-4xl mx-auto">
-      <div className="mb-12 pb-6 border-b border-[var(--border-color)]">
-        <span className="caption-3 uppercase tracking-wider text-[var(--text-muted)] block mb-2">
-          Recruiter FAQ
-        </span>
-        <h2 className="heading-3 text-[var(--text-primary)]">
-          Frequently Addressed Questions
-        </h2>
-      </div>
+    <section id="faq" className="w-full py-20 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto w-full">
+        <div className="mb-12 pb-6 border-b border-[var(--border-color)]">
+          <span className="caption-3 uppercase tracking-wider text-[var(--text-muted)] block mb-2 font-mono-numbers">
+            Recruiter FAQ
+          </span>
+          <h2 className="heading-3 text-[var(--text-primary)]">
+            Frequently Addressed Questions
+          </h2>
+        </div>
 
-      <div className="space-y-4">
-        {faqs.map((item, index) => {
-          const isOpen = openIndex === index;
-          return (
-            <div
-              key={index}
-              className="rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden transition-colors duration-300 hover:border-[var(--border-strong)]"
-            >
-              <button
-                type="button"
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer gap-4"
-                aria-expanded={isOpen}
+        <div className="space-y-4">
+          {faqs.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div
+                key={index}
+                className="rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden transition-all duration-300 hover:border-[var(--border-strong)] shadow-sm"
               >
-                <span className="title-2 text-[var(--text-primary)]">
-                  {item.q}
-                </span>
-                <span
-                  className="w-6 h-6 rounded-full flex items-center justify-center border border-[var(--border-color)] text-[var(--text-muted)] text-sm flex-shrink-0 transition-transform duration-300"
-                  style={{
-                    transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
-                  }}
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer gap-4"
+                  aria-expanded={isOpen}
                 >
-                  +
-                </span>
-              </button>
-
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: baseEase }}
+                  <span className="title-2 text-[var(--text-primary)] font-medium">
+                    {item.q}
+                  </span>
+                  <span
+                    className="w-7 h-7 rounded-full flex items-center justify-center border border-[var(--border-color)] text-[var(--text-muted)] text-base flex-shrink-0 transition-transform duration-300"
+                    style={{
+                      transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+                    }}
                   >
-                    <div className="px-6 pb-6 pt-1 text-[var(--text-secondary)] body-4 border-t border-[var(--border-color)]">
-                      {item.a}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          );
-        })}
+                    +
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: baseEase }}
+                    >
+                      <div className="px-6 pb-6 pt-2 text-[var(--text-secondary)] body-4 border-t border-[var(--border-color)] leading-relaxed">
+                        {item.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -24,23 +24,23 @@
   --duration-base: 500ms;
   --duration-hover: 300ms;
 
-  /* Default Dark Mode Palette (B4: #000000, #181818, #1F1F1F, #272727, #313131, #131209) */
+  /* Default Dark Mode Palette (Strict B4: #000000, #181818, #1F1F1F, #272727, #313131, #131209) */
   --bg-primary: #000000;
   --bg-surface: #181818;
   --bg-card: #181818;
   --bg-card-subtle: #1F1F1F;
   --border-color: #272727;
-  --border-strong: #313131;
+  --border-strong: #383838;
   --text-primary: #FFFFFF;
-  --text-secondary: #C4C4C4;
-  --text-muted: #888888;
+  --text-secondary: #A1A1AA;
+  --text-muted: #52525B;
   --hero-gradient-from: #FFFFFF;
-  --hero-gradient-to: #9B9B9B;
+  --hero-gradient-to: #71717A;
   --accent-button-bg: #FFFFFF;
   --accent-button-text: #000000;
   --badge-bg: #1F1F1F;
-  --badge-text: #C4C4C4;
-  --nav-bg: rgba(24, 24, 24, 0.85);
+  --badge-text: #D4D4D8;
+  --nav-bg: rgba(24, 24, 24, 0.88);
   --nav-border: #272727;
 }
 
@@ -48,22 +48,22 @@
 html.light,
 [data-theme="light"] {
   --bg-primary: #FFFFFF;
-  --bg-surface: #F9F9F9;
+  --bg-surface: #F4F4F5;
   --bg-card: #FFFFFF;
-  --bg-card-subtle: #F2F2F2;
-  --border-color: #E5E5E5;
-  --border-strong: #D4D4D4;
-  --text-primary: #111111;
-  --text-secondary: #555555;
-  --text-muted: #777777;
-  --hero-gradient-from: #000000;
-  --hero-gradient-to: #666666;
-  --accent-button-bg: #111111;
+  --bg-card-subtle: #F4F4F5;
+  --border-color: #E4E4E7;
+  --border-strong: #D4D4D8;
+  --text-primary: #09090B;
+  --text-secondary: #52525B;
+  --text-muted: #A1A1AA;
+  --hero-gradient-from: #09090B;
+  --hero-gradient-to: #71717A;
+  --accent-button-bg: #09090B;
   --accent-button-text: #FFFFFF;
-  --badge-bg: #EAEAEA;
-  --badge-text: #222222;
-  --nav-bg: rgba(255, 255, 255, 0.85);
-  --nav-border: #EAEAEA;
+  --badge-bg: #F4F4F5;
+  --badge-text: #27272A;
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --nav-border: #E4E4E7;
 }
 
 * {
@@ -73,7 +73,12 @@ html.light,
   font-style: normal !important;
 }
 
-html {
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-family-primary);
@@ -85,11 +90,18 @@ html {
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-family-primary);
-  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: background-color var(--duration-hover) var(--ease-base), color var(--duration-hover) var(--ease-base);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Lenis smooth scrolling support */
@@ -138,36 +150,22 @@ p, li, blockquote {
 
 /* B1: Named Text Styles */
 .heading-1 {
-  font-size: 3.75rem; /* 60px */
-  line-height: 3.75rem; /* 60px */
+  font-size: clamp(2.5rem, 5vw, 3.75rem); /* 40px to 60px */
+  line-height: 1.05;
   font-weight: 600;
   letter-spacing: -0.03em;
 }
 
-@media (max-width: 640px) {
-  .heading-1 {
-    font-size: 2.5rem; /* 40px */
-    line-height: 2.75rem; /* 44px */
-  }
-}
-
 .heading-2 {
-  font-size: 3rem; /* 48px */
-  line-height: 3rem; /* 48px */
+  font-size: clamp(2rem, 4vw, 3rem); /* 32px to 48px */
+  line-height: 1.1;
   font-weight: 600;
   letter-spacing: -0.025em;
 }
 
-@media (max-width: 640px) {
-  .heading-2 {
-    font-size: 2rem; /* 32px */
-    line-height: 2.25rem; /* 36px */
-  }
-}
-
 .heading-3 {
-  font-size: 2.25rem; /* 36px */
-  line-height: 2.5rem; /* 40px */
+  font-size: clamp(1.75rem, 3vw, 2.25rem); /* 28px to 36px */
+  line-height: 1.2;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -259,58 +257,44 @@ p, li, blockquote {
 
 /* B1: Button Text Styles */
 .button-lg {
-  font-size: 1.125rem; /* 18px */
-  line-height: 1.75rem; /* 28px */
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px; /* B2 Main button padding */
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: transform var(--duration-hover) var(--ease-base), opacity var(--duration-hover) var(--ease-base);
+  transition: transform var(--duration-hover) var(--ease-base), opacity var(--duration-hover) var(--ease-base), background-color var(--duration-hover) var(--ease-base), border-color var(--duration-hover) var(--ease-base);
   text-decoration: none;
 }
 
 .button-md {
-  font-size: 1rem; /* 16px */
-  line-height: 1.5rem; /* 24px */
+  font-size: 0.9375rem;
+  line-height: 1.375rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px; /* B2 Main button padding */
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: transform var(--duration-hover) var(--ease-base), opacity var(--duration-hover) var(--ease-base);
+  transition: transform var(--duration-hover) var(--ease-base), opacity var(--duration-hover) var(--ease-base), background-color var(--duration-hover) var(--ease-base), border-color var(--duration-hover) var(--ease-base);
   text-decoration: none;
 }
 
 .button-sm {
-  font-size: 0.875rem; /* 14px */
-  line-height: 1.25rem; /* 20px */
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: transform var(--duration-hover) var(--ease-base), opacity var(--duration-hover) var(--ease-base);
-  text-decoration: none;
-}
-
-.button-xsm {
-  font-size: 0.75rem; /* 12px */
-  line-height: 1rem; /* 16px */
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform var(--duration-hover) var(--ease-base), opacity var(--duration-hover) var(--ease-base);
+  transition: transform var(--duration-hover) var(--ease-base), opacity var(--duration-hover) var(--ease-base), background-color var(--duration-hover) var(--ease-base), border-color var(--duration-hover) var(--ease-base);
   text-decoration: none;
 }
 
@@ -318,7 +302,7 @@ p, li, blockquote {
 .button-md:hover,
 .button-lg:hover,
 .button-sm:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .button-md:active,
@@ -338,7 +322,7 @@ a:focus-visible {
 
 /* B5: Hero Section text gradient */
 .hero-gradient-text {
-  background: linear-gradient(to right, var(--hero-gradient-from), var(--hero-gradient-to));
+  background: linear-gradient(135deg, var(--hero-gradient-from) 30%, var(--hero-gradient-to) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
