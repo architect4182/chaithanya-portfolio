@@ -24,29 +24,7 @@
   --duration-base: 500ms;
   --duration-hover: 300ms;
 
-  /* Light Theme Palette */
-  --bg-primary: #FFFFFF;
-  --bg-surface: #F9F9F9;
-  --bg-card: #FFFFFF;
-  --bg-card-subtle: #F2F2F2;
-  --border-color: #E5E5E5;
-  --border-strong: #D4D4D4;
-  --text-primary: #111111;
-  --text-secondary: #555555;
-  --text-muted: #777777;
-  --hero-gradient-from: #000000;
-  --hero-gradient-to: #666666;
-  --accent-button-bg: #111111;
-  --accent-button-text: #FFFFFF;
-  --badge-bg: #EAEAEA;
-  --badge-text: #222222;
-  --nav-bg: rgba(255, 255, 255, 0.85);
-  --nav-border: #EAEAEA;
-}
-
-/* Strict Dark Mode Palette (B4: #000000, #181818, #1F1F1F, #272727, #313131, #131209) */
-html.dark,
-[data-theme="dark"] {
+  /* Default Dark Mode Palette (B4: #000000, #181818, #1F1F1F, #272727, #313131, #131209) */
   --bg-primary: #000000;
   --bg-surface: #181818;
   --bg-card: #181818;
@@ -64,6 +42,28 @@ html.dark,
   --badge-text: #C4C4C4;
   --nav-bg: rgba(24, 24, 24, 0.85);
   --nav-border: #272727;
+}
+
+/* Light Theme Palette override */
+html.light,
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-surface: #F9F9F9;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F2F2F2;
+  --border-color: #E5E5E5;
+  --border-strong: #D4D4D4;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-muted: #777777;
+  --hero-gradient-from: #000000;
+  --hero-gradient-to: #666666;
+  --accent-button-bg: #111111;
+  --accent-button-text: #FFFFFF;
+  --badge-bg: #EAEAEA;
+  --badge-text: #222222;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: #EAEAEA;
 }
 
 * {

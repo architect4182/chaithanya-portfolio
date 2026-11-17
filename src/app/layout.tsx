@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable}`} data-theme="dark" suppressHydrationWarning>
       <body className="antialiased min-h-screen">
         <a href="#main-content" className="skip-link">
           Skip to main content
