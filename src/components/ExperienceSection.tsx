@@ -39,144 +39,220 @@ export default function ExperienceSection() {
       <div className="experience-layout">
         {/* Left Column: Timeline */}
         <div className="experience-timeline-container" style={{ transform: "translateZ(0)" }}>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: { staggerChildren: 0.18 }
-              }
-            }}
-            className="experience-list"
-          >
-            {[
-              {
-                role: "Information Technology Analyst",
-                company: "NTT DATA",
-                logo: "https://api.companyenrich.com/logo/nttdata.com",
-                logoHeight: "48px",
-                clientLogo: "https://api.companyenrich.com/logo/hanover.com",
-                clientName: "The Hanover Insurance Group",
-                year: "July 2022 - Present",
-                desc: [
-                  <>Developed and maintained RESTful APIs and microservices using Java 11, Spring Boot, and Spring Security with role-based authentication and authorization (RBAC).</>,
-                  <>Designed and implemented core insurance workflow modules, including policy creation, endorsements, renewals, cancellations, and claims processing, while integrating SOAP and REST services with external SOAP and REST APIs.</>,
-                  <>Optimized Oracle and Microsoft SQL Server database queries, improving data retrieval performance by <strong style={{ color: "var(--accent-primary)" }}>20%</strong> and enhancing overall application efficiency.</>,
-                  <>Built responsive Angular applications using TypeScript, HTML5, CSS3, and reusable component architecture, improving frontend development efficiency by <strong style={{ color: "var(--accent-primary)" }}>25%</strong>.</>,
-                  <>Implemented lazy loading, route optimization, and performance enhancements, reducing application load times by <strong style={{ color: "var(--accent-primary)" }}>30%</strong>.</>,
-                  <>Collaborated in Agile/Scrum teams, participating in sprint planning, code reviews, UAT, and CI/CD pipelines to deliver high-quality enterprise applications.</>
-                ]
-              },
-              {
-                role: "B.Tech – Computer Science & Engineering",
-                company: "Presidency University",
-                location: "Bangalore",
-                logo: "https://api.companyenrich.com/logo/presidencyuniversity.in",
-                logoHeight: "48px",
-                year: "2018 - 2022",
-                desc: [
-                  <>Graduated in Computer Science with a focus on software engineering and development.</>,
-                  <><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Database Management Systems, Object-Oriented Programming, and Web Technologies.</>,
-                  <><strong>Key Achievement:</strong> Developed a comprehensive Student Management System as a capstone project.</>
-                ]
-              },
-            ].map((exp, i) => (
-              <motion.div
-                key={i}
-                className="experience-item"
-                variants={{
-                  hidden: { opacity: 0, x: -16 },
-                  show: {
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
-                  }
-                }}
-                style={{ transform: "translateZ(0)" }}
-              >
-                <div className="timeline-dot"></div>
-                <div className="date-badge">{exp.year}</div>
-                <div className="exp-header">
-                  <h3>{exp.role}</h3>
-                </div>
-                <div className="exp-company" style={{ marginBottom: "1.2rem" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: (exp as any).clientLogo ? "0.6rem" : "0" }}>
-                    {exp.logo ? (
-                      <>
-                        <img
-                          src={exp.logo}
-                          alt={exp.company}
-                          style={{
-                            height: (exp as any).logoHeight || "48px",
-                            width: (exp as any).logoWidth || (exp as any).logoHeight || "48px",
-                            objectFit: "contain",
-                            borderRadius: "8px",
-                            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.35)",
-                            backgroundColor: "rgba(25, 4, 8, 0.6)"
-                          }}
-                          onError={(e) => {
-                            e.currentTarget.style.display = 'none';
-                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                            if (fallback) fallback.style.display = 'inline';
-                          }}
-                        />
-                        <span style={{ display: 'none' }}>{exp.company}</span>
-                      </>
-                    ) : (
-                      <span>{exp.company}</span>
-                    )}
-                    {(exp as any).location && (
-                      <span style={{ color: "rgba(255, 220, 225, 0.7)", fontSize: "0.95rem" }}>
-                        ({(exp as any).location})
-                      </span>
-                    )}
+          {/* Work Experience Section */}
+          <div style={{ marginBottom: "3.5rem" }}>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
+              marginBottom: "2rem",
+              paddingBottom: "0.75rem",
+              borderBottom: "1px solid rgba(255, 50, 75, 0.2)"
+            }}>
+              <span style={{
+                width: "4px",
+                height: "24px",
+                borderRadius: "2px",
+                backgroundColor: "var(--accent-primary)",
+                boxShadow: "0 0 10px rgba(255, 45, 70, 0.8)",
+                display: "inline-block",
+                flexShrink: 0
+              }} />
+              <h3 style={{
+                fontSize: "1.65rem",
+                fontWeight: 700,
+                background: "linear-gradient(90deg, #ffffff 10%, #ff8595 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                margin: 0,
+                letterSpacing: "-0.01em"
+              }}>
+                Work Experience
+              </h3>
+            </div>
+            <div className="experience-list">
+              {[
+                {
+                  role: "Information Technology Analyst",
+                  company: "NTT DATA",
+                  logo: "https://api.companyenrich.com/logo/nttdata.com",
+                  logoHeight: "48px",
+                  clientLogo: "https://api.companyenrich.com/logo/hanover.com",
+                  clientName: "The Hanover Insurance Group",
+                  year: "July 2022 - Present",
+                  desc: [
+                    <>Developed and maintained RESTful APIs and microservices using Java 11, Spring Boot, and Spring Security with role-based authentication and authorization (RBAC).</>,
+                    <>Designed and implemented core insurance workflow modules, including policy creation, endorsements, renewals, cancellations, and claims processing, while integrating SOAP and REST services with external SOAP and REST APIs.</>,
+                    <>Optimized Oracle and Microsoft SQL Server database queries, improving data retrieval performance by <strong style={{ color: "var(--accent-primary)" }}>20%</strong> and enhancing overall application efficiency.</>,
+                    <>Built responsive Angular applications using TypeScript, HTML5, CSS3, and reusable component architecture, improving frontend development efficiency by <strong style={{ color: "var(--accent-primary)" }}>25%</strong>.</>,
+                    <>Implemented lazy loading, route optimization, and performance enhancements, reducing application load times by <strong style={{ color: "var(--accent-primary)" }}>30%</strong>.</>,
+                    <>Collaborated in Agile/Scrum teams, participating in sprint planning, code reviews, UAT, and CI/CD pipelines to deliver high-quality enterprise applications.</>
+                  ]
+                }
+              ].map((exp, i) => (
+                <motion.div
+                  key={i}
+                  className="experience-item"
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ transform: "translateZ(0)" }}
+                >
+                  <div className="timeline-dot"></div>
+                  <div className="date-badge">{exp.year}</div>
+                  <div className="exp-header">
+                    <h3>{exp.role}</h3>
                   </div>
+                  <div className="exp-company" style={{ marginBottom: "1.2rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.6rem" }}>
+                      <img
+                        src={exp.logo}
+                        alt={exp.company}
+                        style={{
+                          height: exp.logoHeight || "48px",
+                          width: exp.logoHeight || "48px",
+                          objectFit: "contain",
+                          borderRadius: "8px",
+                          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.35)",
+                          backgroundColor: "rgba(25, 4, 8, 0.6)"
+                        }}
+                      />
+                      <span style={{ color: "var(--text-white)", fontSize: "1.15rem", fontWeight: 600 }}>
+                        {exp.company}
+                      </span>
+                    </div>
 
-                  {((exp as any).clientLogo || (exp as any).clientName) && (
                     <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", marginTop: "0.4rem" }}>
                       <span style={{ fontSize: "0.85rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 600 }}>
                         Client:
                       </span>
                       <div style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
-                        {(exp as any).clientLogo && (
-                          <img
-                            src={(exp as any).clientLogo}
-                            alt={(exp as any).clientName || "Client"}
-                            style={{
-                              height: "30px",
-                              width: "30px",
-                              borderRadius: "50%",
-                              objectFit: "contain",
-                              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
-                              backgroundColor: "rgba(25, 4, 8, 0.6)",
-                              flexShrink: 0
-                            }}
-                          />
-                        )}
-                        {(exp as any).clientName && (
-                          <span style={{ color: "var(--text-white)", fontSize: "1.05rem", fontWeight: 600 }}>
-                            {(exp as any).clientName}
-                          </span>
-                        )}
+                        <img
+                          src={exp.clientLogo}
+                          alt={exp.clientName}
+                          style={{
+                            height: "30px",
+                            width: "30px",
+                            borderRadius: "50%",
+                            objectFit: "contain",
+                            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
+                            backgroundColor: "rgba(25, 4, 8, 0.6)",
+                            flexShrink: 0
+                          }}
+                        />
+                        <span style={{ color: "var(--text-white)", fontSize: "1.05rem", fontWeight: 600 }}>
+                          {exp.clientName}
+                        </span>
                       </div>
                     </div>
-                  )}
-                </div>
-                <div className="exp-desc">
-                  <ul>
-                    {exp.desc.map((item, idx) => (
-                      <li key={idx}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                  </div>
+                  <div className="exp-desc">
+                    <ul>
+                      {exp.desc.map((item, idx) => (
+                        <li key={idx}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education Section */}
+          <div style={{ marginTop: "3.5rem" }}>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
+              marginBottom: "2rem",
+              paddingBottom: "0.75rem",
+              borderBottom: "1px solid rgba(255, 50, 75, 0.2)"
+            }}>
+              <span style={{
+                width: "4px",
+                height: "24px",
+                borderRadius: "2px",
+                backgroundColor: "var(--accent-primary)",
+                boxShadow: "0 0 10px rgba(255, 45, 70, 0.8)",
+                display: "inline-block",
+                flexShrink: 0
+              }} />
+              <h3 style={{
+                fontSize: "1.65rem",
+                fontWeight: 700,
+                background: "linear-gradient(90deg, #ffffff 10%, #ff8595 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                margin: 0,
+                letterSpacing: "-0.01em"
+              }}>
+                Education
+              </h3>
+            </div>
+            <div className="experience-list">
+              {[
+                {
+                  degree: "B.Tech – Computer Science & Engineering",
+                  college: "Presidency University, Bangalore",
+                  logo: "https://api.companyenrich.com/logo/presidencyuniversity.in",
+                  logoHeight: "48px",
+                  year: "2018 - 2022",
+                  desc: [
+                    <>Graduated in Computer Science with a focus on software engineering and development.</>,
+                    <><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Database Management Systems, Object-Oriented Programming, and Web Technologies.</>,
+                    <><strong>Key Achievement:</strong> Developed a comprehensive Student Management System as a capstone project.</>
+                  ]
+                }
+              ].map((edu, i) => (
+                <motion.div
+                  key={i}
+                  className="experience-item"
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ transform: "translateZ(0)" }}
+                >
+                  <div className="timeline-dot"></div>
+                  <div className="date-badge">{edu.year}</div>
+                  <div className="exp-header">
+                    <h3>{edu.degree}</h3>
+                  </div>
+                  <div className="exp-company" style={{ marginBottom: "1.2rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                      <img
+                        src={edu.logo}
+                        alt={edu.college}
+                        style={{
+                          height: edu.logoHeight || "48px",
+                          width: edu.logoHeight || "48px",
+                          objectFit: "contain",
+                          borderRadius: "8px",
+                          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.35)",
+                          backgroundColor: "rgba(25, 4, 8, 0.6)"
+                        }}
+                      />
+                      <span style={{ color: "var(--text-white)", fontSize: "1.15rem", fontWeight: 600 }}>
+                        {edu.college}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="exp-desc">
+                    <ul>
+                      {edu.desc.map((item, idx) => (
+                        <li key={idx}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
           {/* Certifications Section */}
           <motion.div
@@ -186,7 +262,35 @@ export default function ExperienceSection() {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             style={{ marginTop: "4rem", transform: "translateZ(0)" }}
           >
-            <h3 style={{ fontSize: "1.5rem", color: "var(--text-white)", marginBottom: "1.5rem", fontWeight: 600 }}>{"Certifications & Continuous Learning"}</h3>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
+              marginBottom: "1.8rem",
+              paddingBottom: "0.75rem",
+              borderBottom: "1px solid rgba(255, 50, 75, 0.2)"
+            }}>
+              <span style={{
+                width: "4px",
+                height: "24px",
+                borderRadius: "2px",
+                backgroundColor: "var(--accent-primary)",
+                boxShadow: "0 0 10px rgba(255, 45, 70, 0.8)",
+                display: "inline-block",
+                flexShrink: 0
+              }} />
+              <h3 style={{
+                fontSize: "1.65rem",
+                fontWeight: 700,
+                background: "linear-gradient(90deg, #ffffff 10%, #ff8595 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                margin: 0,
+                letterSpacing: "-0.01em"
+              }}>
+                Certifications & Continuous Learning
+              </h3>
+            </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {[
                 {
