@@ -51,6 +51,7 @@ export default function ProjectVideo({ src, poster, style, className }: ProjectV
   return (
     <video
       ref={videoRef}
+      suppressHydrationWarning
       loop
       muted
       playsInline
