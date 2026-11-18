@@ -628,18 +628,17 @@ body {
 
 .tech-tag {
     padding: 0.4rem 0.8rem;
-    background: rgba(255, 45, 70, 0.06);
-    border: 1px solid rgba(255, 50, 75, 0.16);
+    background: rgba(25, 4, 8, 0.6);
+    border: none;
     border-radius: 8px;
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--text-white);
     transition: all 0.2s ease;
 }
 
 .tech-tag:hover {
     color: var(--text-white);
     background: rgba(255, 45, 70, 0.18);
-    border-color: var(--accent-primary);
     box-shadow: 0 0 12px rgba(255, 45, 70, 0.3);
 }
 

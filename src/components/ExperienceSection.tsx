@@ -56,9 +56,10 @@ export default function ExperienceSection() {
               {
                 role: "Information Technology Analyst",
                 company: "NTT DATA",
-                client: "(Client: The Hanover Insurance Group)",
                 logo: "https://api.companyenrich.com/logo/nttdata.com",
                 logoHeight: "48px",
+                clientLogo: "https://api.companyenrich.com/logo/hanover.com",
+                clientName: "The Hanover Insurance Group",
                 year: "July 2022 - Present",
                 desc: [
                   <>Developed and maintained RESTful APIs and microservices using Java 11, Spring Boot, and Spring Security with role-based authentication and authorization (RBAC).</>,
@@ -72,7 +73,7 @@ export default function ExperienceSection() {
               {
                 role: "B.Tech – Computer Science & Engineering",
                 company: "Presidency University",
-                client: "Presidency University, Bangalore",
+                location: "Bangalore",
                 logo: "https://api.companyenrich.com/logo/presidencyuniversity.in",
                 logoHeight: "48px",
                 year: "2018 - 2022",
@@ -101,34 +102,69 @@ export default function ExperienceSection() {
                 <div className="exp-header">
                   <h3>{exp.role}</h3>
                 </div>
-                <p className="exp-company" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem", flexWrap: "wrap" }}>
-                  {exp.logo ? (
-                    <>
-                      <img
-                        src={exp.logo}
-                        alt={exp.company}
-                        style={{
-                          height: (exp as any).logoHeight || "48px",
-                          width: (exp as any).logoWidth || (exp as any).logoHeight || "48px",
-                          objectFit: "contain",
-                          borderRadius: "8px",
-                          border: "1px solid rgba(255, 50, 75, 0.2)",
-                          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.35)",
-                          backgroundColor: "rgba(25, 4, 8, 0.6)"
-                        }}
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                          const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                          if (fallback) fallback.style.display = 'inline';
-                        }}
-                      />
-                      <span style={{ display: 'none' }}>{exp.company}</span>
-                    </>
-                  ) : (
-                    <span>{exp.company}</span>
+                <div className="exp-company" style={{ marginBottom: "1.2rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: (exp as any).clientLogo ? "0.6rem" : "0" }}>
+                    {exp.logo ? (
+                      <>
+                        <img
+                          src={exp.logo}
+                          alt={exp.company}
+                          style={{
+                            height: (exp as any).logoHeight || "48px",
+                            width: (exp as any).logoWidth || (exp as any).logoHeight || "48px",
+                            objectFit: "contain",
+                            borderRadius: "8px",
+                            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.35)",
+                            backgroundColor: "rgba(25, 4, 8, 0.6)"
+                          }}
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'inline';
+                          }}
+                        />
+                        <span style={{ display: 'none' }}>{exp.company}</span>
+                      </>
+                    ) : (
+                      <span>{exp.company}</span>
+                    )}
+                    {(exp as any).location && (
+                      <span style={{ color: "rgba(255, 220, 225, 0.7)", fontSize: "0.95rem" }}>
+                        ({(exp as any).location})
+                      </span>
+                    )}
+                  </div>
+
+                  {((exp as any).clientLogo || (exp as any).clientName) && (
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", marginTop: "0.4rem" }}>
+                      <span style={{ fontSize: "0.85rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 600 }}>
+                        Client:
+                      </span>
+                      <div style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
+                        {(exp as any).clientLogo && (
+                          <img
+                            src={(exp as any).clientLogo}
+                            alt={(exp as any).clientName || "Client"}
+                            style={{
+                              height: "30px",
+                              width: "30px",
+                              borderRadius: "50%",
+                              objectFit: "contain",
+                              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
+                              backgroundColor: "rgba(25, 4, 8, 0.6)",
+                              flexShrink: 0
+                            }}
+                          />
+                        )}
+                        {(exp as any).clientName && (
+                          <span style={{ color: "var(--text-white)", fontSize: "1.05rem", fontWeight: 600 }}>
+                            {(exp as any).clientName}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   )}
-                  {exp.client && <span style={{ color: "rgba(255, 220, 225, 0.7)", fontSize: "0.95rem" }}>{exp.client}</span>}
-                </p>
+                </div>
                 <div className="exp-desc">
                   <ul>
                     {exp.desc.map((item, idx) => (
@@ -173,17 +209,27 @@ export default function ExperienceSection() {
                     <div style={{
                       width: "48px",
                       height: "48px",
-                      borderRadius: "50%",
-                      backgroundColor: "rgba(255, 45, 70, 0.12)",
+                      borderRadius: "10px",
+                      backgroundColor: "rgba(25, 4, 8, 0.6)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       color: "var(--accent-primary)",
                       flexShrink: 0,
-                      overflow: "hidden"
+                      overflow: "hidden",
+                      boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)"
                     }}>
                       {cert.logo ? (
-                        <img src={cert.logo} alt={cert.issuer} loading="lazy" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
+                        <img
+                          src={cert.logo}
+                          alt={cert.issuer}
+                          loading="lazy"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                          }}
+                        />
                       ) : (
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89L17 22l-5-3l-5 3l1.523-9.11"></path></svg>
                       )}
@@ -260,16 +306,22 @@ export default function ExperienceSection() {
                 <div style={{
                   width: "48px",
                   height: "48px",
-                  borderRadius: "50%",
-                  backgroundColor: "rgba(255, 45, 70, 0.12)",
+                  borderRadius: "10px",
+                  backgroundColor: "rgba(25, 4, 8, 0.6)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   color: "var(--accent-primary)",
                   flexShrink: 0,
-                  overflow: "hidden"
+                  overflow: "hidden",
+                  boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)"
                 }}>
-                  <img src="https://api.companyenrich.com/logo/skillsoft.com" alt="Skillsoft Wallet" loading="lazy" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
+                  <img
+                    src="https://api.companyenrich.com/logo/skillsoft.com"
+                    alt="Skillsoft Wallet"
+                    loading="lazy"
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: "1 1 200px" }}>
                   <h4 style={{ color: "var(--text-white)", fontSize: "1.2rem", margin: 0, fontWeight: 600 }}>Verified Digital Badge Wallet</h4>
@@ -390,11 +442,18 @@ export default function ExperienceSection() {
           </div>
 
           <div className="stat-card">
-            <span className="stat-label" style={{ marginBottom: "0.5rem" }}>Core Technologies</span>
-            <div className="tech-grid">
-              {["Java", "Spring Boot", "React", "Angular", "Python", "SQL", "Power BI", "AWS", "Git"].map((tech) => (
-                <span key={tech} className="tech-tag">
-                  {tech}
+            <span className="stat-label" style={{ marginBottom: "1rem", display: "block" }}>Core Technologies</span>
+            <div className="tech-grid" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.6rem" }}>
+              {["Java", "Spring Boot", "React", "Angular", "Python", "SQL", "Power BI", "AWS", "Git"].map((tech, index, arr) => (
+                <span key={tech} style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
+                  <span className="tech-tag">
+                    {tech}
+                  </span>
+                  {index < arr.length - 1 && (
+                    <span style={{ color: "var(--accent-primary)", fontWeight: 900, fontSize: "1.1rem", lineHeight: 1, userSelect: "none" }}>
+                      •
+                    </span>
+                  )}
                 </span>
               ))}
             </div>
@@ -411,7 +470,6 @@ export default function ExperienceSection() {
                     alignItems: "center",
                     gap: "0.5rem",
                     backgroundColor: "rgba(25, 4, 8, 0.6)",
-                    border: "1px solid rgba(255, 50, 75, 0.18)",
                     padding: "0.4rem 0.8rem",
                     borderRadius: "8px",
                   }}
