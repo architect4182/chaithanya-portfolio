@@ -1,18 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaRocket, FaCodeBranch } from "react-icons/fa6";
 import { AiFillOpenAI } from "react-icons/ai";
 
 export default function AiToolsSection() {
-  const tools = [
+  const tools: Array<{
+    name: string;
+    desc: string;
+    domain?: string;
+    slug?: string;
+    color?: string;
+    customImg?: string;
+    invert?: boolean;
+    icon?: React.ReactNode;
+  }> = [
     { name: "ChatGPT", desc: "Conversational AI & Problem Solving", icon: <AiFillOpenAI size={24} color="#10A37F" /> },
     { name: "Claude", desc: "Advanced Reasoning & Coding", slug: "claude", color: "D97757" },
-    { name: "Google Gemini", desc: "Multimodal AI Integration", slug: "googlegemini", color: "8E75B2" },
-    { name: "GitHub Copilot", desc: "AI Pair Programmer", slug: "githubcopilot", color: "white" },
+    { name: "Google Gemini", desc: "Multimodal AI Integration", domain: "gemini.google.com" },
+    { name: "GitHub Copilot", desc: "AI Pair Programmer", customImg: "/copilot.png" },
     { name: "Grok", desc: "Real-time AI Intelligence", customImg: "/grok.png", invert: true },
     { name: "Codex", desc: "Code Generation Engine", icon: <AiFillOpenAI size={24} color="#FFFFFF" /> },
     { name: "Antigravity", desc: "Agentic AI Workflow", customImg: "/antigravity.png" },
+    { name: "Figma", desc: "Collaborative Interface Design", customImg: "/figma.png" },
     { name: "Framer", desc: "AI-Powered Web Design", slug: "framer", color: "white" },
   ];
 
@@ -73,7 +82,17 @@ export default function AiToolsSection() {
                   alt={`${tool.name} logo`}
                   width={24}
                   height={24}
+                  loading="lazy"
                   style={{ display: "block" }}
+                />
+              ) : tool.domain ? (
+                <img
+                  src={`https://api.companyenrich.com/logo/${tool.domain}`}
+                  alt={`${tool.name} logo`}
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                  style={{ display: "block", objectFit: "contain" }}
                 />
               ) : tool.customImg ? (
                 <img

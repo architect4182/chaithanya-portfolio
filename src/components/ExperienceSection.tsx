@@ -4,10 +4,19 @@ import { motion } from "framer-motion";
 import { AiFillOpenAI } from "react-icons/ai";
 
 export default function ExperienceSection() {
-  const aiTools = [
+  const aiTools: Array<{
+    name: string;
+    desc: string;
+    domain?: string;
+    slug?: string;
+    color?: string;
+    customImg?: string;
+    invert?: boolean;
+    icon?: React.ReactNode;
+  }> = [
     { name: "ChatGPT", desc: "Conversational AI & Problem Solving", icon: <AiFillOpenAI size={18} color="#FFFFFF" /> },
     { name: "Claude", desc: "Advanced Reasoning & Coding", slug: "claude", color: "D97757" },
-    { name: "Google Gemini", desc: "Multimodal AI Integration", slug: "googlegemini", color: "8E75B2" },
+    { name: "Google Gemini", desc: "Multimodal AI Integration", domain: "gemini.google.com" },
     { name: "Copilot", desc: "AI Assistant & Pair Programmer", customImg: "/copilot.png" },
     { name: "Grok", desc: "Real-time AI Intelligence", customImg: "/grok.png", invert: true },
     { name: "Codex", desc: "Code Generation Engine", icon: <AiFillOpenAI size={18} color="#10A37F" /> },
@@ -48,7 +57,8 @@ export default function ExperienceSection() {
                 role: "Information Technology Analyst",
                 company: "NTT DATA",
                 client: "(Client: The Hanover Insurance Group)",
-                logo: "/ntt-data.png",
+                logo: "https://api.companyenrich.com/logo/nttdata.com",
+                logoHeight: "48px",
                 year: "July 2022 - Present",
                 desc: [
                   <>Developed and maintained RESTful APIs and microservices using Java 11, Spring Boot, and Spring Security with role-based authentication and authorization (RBAC).</>,
@@ -62,9 +72,9 @@ export default function ExperienceSection() {
               {
                 role: "B.Tech – Computer Science & Engineering",
                 company: "Presidency University",
-                client: "(Bangalore)",
-                logo: "/presidency-university.svg",
-                logoHeight: "24px",
+                client: "Presidency University, Bangalore",
+                logo: "https://api.companyenrich.com/logo/presidencyuniversity.in",
+                logoHeight: "48px",
                 year: "2018 - 2022",
                 desc: [
                   <>Graduated in Computer Science with a focus on software engineering and development.</>,
@@ -91,13 +101,21 @@ export default function ExperienceSection() {
                 <div className="exp-header">
                   <h3>{exp.role}</h3>
                 </div>
-                <p className="exp-company" style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem", flexWrap: "wrap" }}>
+                <p className="exp-company" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem", flexWrap: "wrap" }}>
                   {exp.logo ? (
                     <>
                       <img
                         src={exp.logo}
                         alt={exp.company}
-                        style={{ height: (exp as any).logoHeight || "20px", width: "auto", objectFit: "contain" }}
+                        style={{
+                          height: (exp as any).logoHeight || "48px",
+                          width: (exp as any).logoWidth || (exp as any).logoHeight || "48px",
+                          objectFit: "contain",
+                          borderRadius: "8px",
+                          border: "1px solid rgba(255, 50, 75, 0.2)",
+                          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.35)",
+                          backgroundColor: "rgba(25, 4, 8, 0.6)"
+                        }}
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                           const fallback = e.currentTarget.nextElementSibling as HTMLElement;
@@ -140,14 +158,14 @@ export default function ExperienceSection() {
                   issuer: "IBM (Coursera)",
                   date: "Aug 2020",
                   link: "https://coursera.org/verify/6KWARKMGZ8BT",
-                  logo: "https://www.google.com/s2/favicons?domain=ibm.com&sz=128"
+                  logo: "https://api.companyenrich.com/logo/ibm.com"
                 },
                 {
                   title: "Introduction to Python",
                   issuer: "DataCamp",
                   date: "Completed",
                   link: "https://www.datacamp.com/completed/statement-of-accomplishment/course/6004d9aef8eeac2762313d46d643901664b33c06",
-                  logo: "https://www.google.com/s2/favicons?domain=datacamp.com&sz=128"
+                  logo: "https://api.companyenrich.com/logo/datacamp.com"
                 }
               ].map((cert, i) => {
                 const CardContent = (
@@ -251,7 +269,7 @@ export default function ExperienceSection() {
                   flexShrink: 0,
                   overflow: "hidden"
                 }}>
-                  <img src="https://www.google.com/s2/favicons?domain=skillsoft.com&sz=128" alt="Skillsoft Wallet" loading="lazy" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
+                  <img src="https://api.companyenrich.com/logo/skillsoft.com" alt="Skillsoft Wallet" loading="lazy" style={{ width: "32px", height: "32px", objectFit: "contain", borderRadius: "4px" }} />
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: "1 1 200px" }}>
                   <h4 style={{ color: "var(--text-white)", fontSize: "1.2rem", margin: 0, fontWeight: 600 }}>Verified Digital Badge Wallet</h4>
@@ -407,6 +425,15 @@ export default function ExperienceSection() {
                         height={18}
                         loading="lazy"
                         style={{ display: "block" }}
+                      />
+                    ) : tool.domain ? (
+                      <img
+                        src={`https://api.companyenrich.com/logo/${tool.domain}`}
+                        alt={`${tool.name} logo`}
+                        width={18}
+                        height={18}
+                        loading="lazy"
+                        style={{ display: "block", objectFit: "contain" }}
                       />
                     ) : tool.customImg ? (
                       <img
