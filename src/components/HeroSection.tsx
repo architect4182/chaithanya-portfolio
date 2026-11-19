@@ -48,15 +48,9 @@ export default function HeroSection() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
               className="supporting-container"
+              style={{ maxWidth: "420px" }}
             >
-              <h2 className="sub-headline">
-                Great code should
-                <br />
-                feel effortless.
-              </h2>
-              <p className="description">
-                Results-driven developer with 4 years of hands-on experience in building enterprise-grade web applications.
-              </p>
+              <EngineersLogBadge />
             </motion.div>
           </div>
 
@@ -172,5 +166,170 @@ export function MorphText({
         </p>
       )}
     </div>
+  );
+}
+
+export function EngineersLogBadge() {
+  return (
+    <motion.div
+      whileHover={{ y: -4, rotate: 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      style={{
+        position: "relative",
+        backgroundColor: "rgba(18, 18, 22, 0.88)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        border: "1px solid rgba(255, 255, 255, 0.08)",
+        borderRadius: "14px",
+        padding: "1.75rem 1.6rem 1.3rem 1.6rem",
+        boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.06)",
+        width: "100%",
+        transform: "rotate(0.5deg)",
+      }}
+    >
+      {/* Brown Tape on top center */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-11px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "90px",
+          height: "22px",
+          background: "linear-gradient(180deg, rgba(145, 100, 65, 0.72) 0%, rgba(105, 70, 42, 0.65) 100%)",
+          backdropFilter: "blur(4px)",
+          border: "1px solid rgba(180, 130, 90, 0.35)",
+          borderRadius: "2px",
+          boxShadow: "0 2px 5px rgba(0, 0, 0, 0.35)",
+          zIndex: 5,
+        }}
+      />
+
+      {/* Header: // ENGINEER'S LOG and vol. 2025 */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          fontFamily: "var(--font-geist-mono), monospace",
+        }}
+      >
+        <span
+          style={{
+            color: "#f59e0b",
+            fontSize: "0.78rem",
+            fontWeight: 600,
+            letterSpacing: "0.08em",
+          }}
+        >
+          {"// ENGINEER'S LOG"}
+        </span>
+        <span
+          style={{
+            color: "#71717a",
+            fontSize: "0.74rem",
+            letterSpacing: "0.04em",
+          }}
+        >
+          vol. 2025
+        </span>
+      </div>
+
+      {/* Divider */}
+      <div
+        style={{
+          height: "1px",
+          backgroundColor: "rgba(255, 255, 255, 0.06)",
+          margin: "0.75rem 0 1.25rem 0",
+        }}
+      />
+
+      {/* Script Quote */}
+      <p
+        style={{
+          fontFamily: "'Caveat', cursive, sans-serif",
+          fontSize: "1.38rem",
+          lineHeight: "1.42",
+          color: "#f4f4f5",
+          letterSpacing: "0.02em",
+          marginBottom: "1.5rem",
+          fontWeight: 500,
+        }}
+      >
+        &ldquo;My standard is simple: when thousands of enterprise workers log in on Monday morning, everything must feel like warm butter.&rdquo;
+      </p>
+
+      {/* Details Table */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.7rem",
+          fontFamily: "var(--font-geist-mono), monospace",
+          fontSize: "0.78rem",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+          <span style={{ color: "#71717a", flexShrink: 0 }}>Main Weapons:</span>
+          <span style={{ color: "#e4e4e7", textAlign: "right" }}>Java 11/17, Spring, Angular, React</span>
+        </div>
+
+        <div style={{ height: "1px", borderBottom: "1px dashed rgba(255, 255, 255, 0.07)" }} />
+
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+          <span style={{ color: "#71717a", flexShrink: 0 }}>Enterprise Client:</span>
+          <span style={{ color: "#e4e4e7", textAlign: "right", lineHeight: "1.3" }}>
+            Hanover Insurance (via NTT DATA)
+          </span>
+        </div>
+
+        <div style={{ height: "1px", borderBottom: "1px dashed rgba(255, 255, 255, 0.07)" }} />
+
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem" }}>
+          <span style={{ color: "#71717a", flexShrink: 0 }}>Verified Badges:</span>
+          <a
+            href="https://skillsoft.digitalbadges.skillsoft.com/profile/chaithanyapedhagali653656/wallet"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#f87171",
+              fontWeight: 600,
+              textDecoration: "none",
+              transition: "opacity 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.8")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+          >
+            200+ Credentials
+          </a>
+        </div>
+      </div>
+
+      {/* Bottom Divider */}
+      <div
+        style={{
+          height: "1px",
+          backgroundColor: "rgba(255, 255, 255, 0.06)",
+          margin: "1.2rem 0 0.85rem 0",
+        }}
+      />
+
+      {/* Footer: Crafted with caffeine & curiosity ☕ */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          fontFamily: "var(--font-geist-mono), monospace",
+        }}
+      >
+        <span style={{ color: "#71717a", fontSize: "0.72rem", letterSpacing: "0.02em" }}>
+          Crafted with caffeine &amp; curiosity
+        </span>
+        <span style={{ fontSize: "0.95rem" }} role="img" aria-label="coffee">
+          ☕
+        </span>
+      </div>
+    </motion.div>
   );
 }
