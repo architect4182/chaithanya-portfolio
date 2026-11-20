@@ -48,7 +48,6 @@ export default function HeroSection() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
               className="supporting-container"
-              style={{ maxWidth: "420px" }}
             >
               <EngineersLogBadge />
             </motion.div>
@@ -86,7 +85,7 @@ export function CustomMorph() {
       words={["FullStack Developer", "UI/UX Designer", "Data Analyst"]}
       interval={2800}
       subtext="Crafting Seamless Digital Experiences."
-      fontSize="clamp(2rem, 10vw, 8rem)"
+      fontSize="var(--hero-morph-size, clamp(2.2rem, 4.2vw, 4.6rem))"
     />
   );
 }
@@ -172,6 +171,7 @@ export function MorphText({
 export function EngineersLogBadge() {
   return (
     <motion.div
+      className="engineers-log-badge"
       whileHover={{ y: -4, rotate: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       style={{
@@ -194,7 +194,7 @@ export function EngineersLogBadge() {
           top: "-11px",
           left: "50%",
           transform: "translateX(-50%)",
-          width: "90px",
+          width: "clamp(72px, 20vw, 90px)",
           height: "22px",
           background: "linear-gradient(180deg, rgba(145, 100, 65, 0.72) 0%, rgba(105, 70, 42, 0.65) 100%)",
           backdropFilter: "blur(4px)",
@@ -248,7 +248,7 @@ export function EngineersLogBadge() {
       <p
         style={{
           fontFamily: "'Caveat', cursive, sans-serif",
-          fontSize: "1.38rem",
+          fontSize: "clamp(1.15rem, 4vw, 1.38rem)",
           lineHeight: "1.42",
           color: "#f4f4f5",
           letterSpacing: "0.02em",

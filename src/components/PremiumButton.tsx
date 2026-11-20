@@ -13,18 +13,22 @@ interface PremiumButtonProps {
 export default function PremiumButton({ href, onClick, children, className = "", ariaLabel }: PremiumButtonProps) {
   const content = (
     <>
-      <span style={{
-        position: "relative",
-        zIndex: 2,
-        fontWeight: 600,
-        fontSize: "1.1rem",
-        color: "white",
-        marginRight: "0.2rem"
-      }}>
+      <span
+        className="premium-btn-text"
+        style={{
+          position: "relative",
+          zIndex: 2,
+          fontWeight: 600,
+          fontSize: "1.1rem",
+          color: "white",
+          marginRight: "0.2rem",
+        }}
+      >
         {children}
       </span>
 
       <div
+        className="premium-btn-circle"
         style={{
           width: "42px",
           height: "42px",
@@ -37,6 +41,7 @@ export default function PremiumButton({ href, onClick, children, className = "",
           position: "relative",
           zIndex: 2,
           boxShadow: "0 0 15px rgba(255, 45, 70, 0.5)",
+          flexShrink: 0,
         }}
       >
         <svg

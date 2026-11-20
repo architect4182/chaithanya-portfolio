@@ -20,7 +20,7 @@ export default function AboutSection() {
         </div>
 
         <div style={{ display: "flex", gap: "3rem", alignItems: "center", flexWrap: "wrap" }}>
-          <div style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: "1.5rem", color: "var(--text-muted)", fontSize: "1.1rem" }}>
+          <div style={{ flex: "1 1 300px", minWidth: 0, display: "flex", flexDirection: "column", gap: "1.5rem", color: "var(--text-muted)", fontSize: "1.1rem" }}>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,8 @@ export default function AboutSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             whileHover={{ y: -4 }}
             style={{
-              flex: "1 1 440px",
+              flex: "1 1 300px",
+              minWidth: 0,
               maxWidth: "540px",
               width: "100%",
               backgroundColor: "rgba(18, 5, 10, 0.72)",
